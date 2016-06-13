@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2015, 2016
+  2015, 2016
 
 ---
 
@@ -14,7 +14,7 @@ copyright:
 #Sécurisation des applications
 {: #securingapps}
 
-*Dernière mise à jour : 17 mars 2016*
+*Dernière mise à jour : 9 mai 2016*
 
 Vous pouvez sécuriser vos applications en téléchargeant des certificats SSL et en limitant l'accès aux applications.
 {:shortdesc}
@@ -83,18 +83,14 @@ d'un plan Paiement à la carte ou Abonnement, vous avez droit à quatre téléch
 Pour
 pouvoir télécharger des certificats, vous devez créer une demande de signature de certificat. Voir [Création de demandes de signature de certificat](#ssl_csr).
 
-Pour servir correctement le certificat SSL, vous devez utiliser les adresses IP ci-après afin de configurer le serveur DNS lors
-de la création d'un domaine personnalisé, dans le but de fournir la route d'URL allouée à votre organisation dans
-{{site.data.keyword.Bluemix_notm}}.
+Lorsque vous utilisez un domaine personnalisé, pour servir le certificat SSL, utilisez les noeuds finaux de région suivants afin de fournir la route
+d'URL allouée à votre organisation dans Bluemix :
 
-* SUD DES ETATS-UNIS : 75.126.81.68
-* EUROPE-ROYAUME-UNI : 5.10.124.142
-* AUSTRALIE-SYDNEY : 168.1.35.166
 
-Les adresses IP que vous utilisez pour les environnements dédiés sont différentes. Prenez contact avec votre
-interlocuteur IBM afin d'obtenir l'adresse IP pour un environnement dédié.
+  * Sur des Etats-Unis : secure.us-south.bluemix.net 
+  * Europe-Royaume-Uni : secure.eu-gb.bluemix.net
+  * Australie-Sydney : secure.au-syd.bluemix.net 
 
-Pour plus d'informations sur la création d'un domaine personnalisé, voir [Création et utilisation d'un domaine personnalisé](updapps.html#domain).
 
 Pour télécharger un certificat pour votre application, procédez comme suit :
 
@@ -104,20 +100,24 @@ Pour télécharger un certificat pour votre application, procédez comme suit :
 
 3. Pour votre domaine personnalisé, cliquez sur **Télécharger le certificat**.
 
-4. Recherchez et téléchargez un certificat, une clé privée et, éventuellement, un certificat intermédiaire. Vous pouvez aussi cocher la case
-permettant d'activer la demande de certificat client.
+4. Recherchez et téléchargez un certificat, une clé privée et, éventuellement, un certificat intermédiaire. Vous pouvez également cocher la case pour
+autoriser les demandes de certificat client. Si vous sélectionnez cette option, vous devez télécharger un fichier de clés certifiées de certificat
+client définissant les accès utilisateur autorisés à votre domaine personnalisé.
 
   **Certificat**
     
     Document numérique qui associe une clé publique à l'identité du propriétaire
 du certificat, permettant ainsi l'authentification du propriétaire du certificat. Un certificat est émis par un organisme de certification et il est signé numériquement par cet organisme.
     
+    En général, un certificat est émis et signé par une autorité de certification. Toutefois, pour le test et le développement, vous pouvez
+utiliser un certificat autosigné. 
+    
     Les types de certificat suivants sont pris en charge dans
 {{site.data.keyword.Bluemix_notm}}:
-    
-      * PEM (pem, .crt, .cer et .cert)
-	  * DER (.der ou .cer )
-      * PKCS #7 (p7b, p7r, spc)
+
+	* PEM (pem, .crt, .cer et .cert)
+	* DER (.der ou .cer )
+	* PKCS #7 (p7b, p7r, spc)
 	  
   **Clé privée**
   
@@ -143,8 +143,9 @@ certificat SSL émis pour l'organisation.
   
   **Activer la demande de certificat client**
   
-    Si vous activez cette option, un utilisateur qui tente d'accéder à un domaine protégé par SSL devra fournir un certificat côté client. Par exemple, dans un navigateur Web, lorsqu'un utilisateur tente d'accéder à un domaine protégé par SSL, le navigateur Web invite l'utilisateur à fournir
-un certificat client pour le domaine.
+    Si vous activez cette option, un utilisateur qui tente d'accéder à un domaine protégé par SSL doit fournir un certificat côté client. Par exemple, dans un navigateur Web, lorsqu'un utilisateur tente d'accéder à un domaine protégé par SSL, le navigateur Web invite l'utilisateur à fournir
+un certificat client pour le domaine. Utilisez l'option de téléchargement de fichier **Magasin de clés de confiance pour les certificats client**
+pour définir les certificats client auxquels vous permettez d'accéder à votre domaine personnalisé.
   
   **Remarque :** la fonction de certificat personnalisé dans la gestion des domaines {{site.data.keyword.Bluemix_notm}}
 dépend de l'extension SNI (Server
@@ -153,5 +154,17 @@ Name Indication) du protocole TLS (Transport Layer Security). Par conséquent, l
 l'extension SNI dans l'implémentation TLS. Pour plus d'informations, voir la
 [section 7.4.2 de RFC
 4346](http://tools.ietf.org/html/rfc4346#section-7.4.2){:new_window}.
+
+  **Magasin de clés de confiance pour les certificats client**
+  
+  Ce magasin est un fichier contenant les certificats client pour les utilisateurs que vous désirez autoriser à accéder à votre application. Si vous activez
+l'option de demande de certificat client, téléchargez un fichier de magasin de clés de confiance pour les certificats client. 
+  
+   Les types de certificat suivants sont pris en charge dans
+{{site.data.keyword.Bluemix_notm}}:
+    
+      * PEM (pem, .crt, .cer et .cert)
+	  * DER (.der ou .cer )
+      * PKCS #7 (p7b, p7r, spc)
 
 Pour supprimer un certificat ou remplacer un certificat existant par un nouveau, accédez à **Gérer les organisations** > **Domaines** > **Afficher le certificat** afin de gérer vos certificats.

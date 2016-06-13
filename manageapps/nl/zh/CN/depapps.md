@@ -14,7 +14,7 @@ copyright:
 #部署应用程序
 {: #deployingapps}
 
-*上次更新时间：2016 年 3 月 17 日*
+*上次更新时间：2016 年 5 月 9 日*
 
 您可以使用各种方法（例如，命令行界面和集成开发环境 (IDE)）将应用程序部署到 {{site.data.keyword.Bluemix}}。您还可以使用应用程序清单来部署应用程序。通过使用应用程序清单，可减少每次将应用程序部署到 {{site.data.keyword.Bluemix_notm}} 时必须指定的部署详细信息的数量。
 {:shortdesc}
@@ -34,7 +34,7 @@ copyright:
 
 启动应用程序时，将创建 Warden 容器的一个或多个实例。可以使用 **cf files** 命令来查看存储在 Warden 容器的文件系统中的文件，例如日志。如果应用程序无法启动，那么 DEA 将停止该应用程序，并除去 Warden 容器的整个内容。因此，如果应用程序停止，或者如果应用程序的编译打包过程失败，那么不会有日志文件可供您使用。
 
-如果应用程序的日志不再可用，并因此导致 **cf files** 命令无法再用于查看编译打包错误的原因，那么可以改为使用 **cf logs** 命令。**cf logs** 使用 Cloud Foundry 日志聚集器来收集应用程序日志和系统日志的详细信息，并且可以查看在日志聚集器中缓冲的内容。有关日志聚集器的更多信息，请参阅[在 Cloud Foundry 中进行日志记录](http://docs.cloudfoundry.org/devguide/deploy-apps/streaming-logs.html){:new_window}。
+如果应用程序的日志不再可用，并因此导致 **cf files** 命令无法再用于查看编译打包错误的原因，那么可以改用 **cf logs** 命令。**cf logs** 使用 Cloud Foundry 日志聚集器来收集应用程序日志和系统日志的详细信息，并且可以查看在日志聚集器中缓冲的内容。有关日志聚集器的更多信息，请参阅[在 Cloud Foundry 中进行日志记录](http://docs.cloudfoundry.org/devguide/deploy-apps/streaming-logs.html){:new_window}。
 
 **注：**缓冲区大小是有限制的。如果应用程序运行了很长时间且未重新启动，那么输入 `cf logs appname --recent` 后可能不会显示日志，原因是日志缓冲区可能已清除。因此，要调试大型应用程序的编译打包错误，可以在部署应用程序时，在 cf 命令行界面的单独命令行中输入 `cf logs appname` 来跟踪日志。
 
@@ -43,7 +43,7 @@ copyright:
 ##使用 cf 命令部署应用程序
 {: #dep_apps}
 
-通过命令行界面将应用程序部署到 {{site.data.keyword.Bluemix_notm}} 时，必须根据应用程序语言和框架，将 buildpack 作为运行时环境提供。您还可以使用 Delivery Pipeline 服务将应用程序部署到 {{site.data.keyword.Bluemix_notm}}。
+通过命令行界面将应用程序部署到 {{site.data.keyword.Bluemix_notm}} 时，必须根据应用程序语言和框架来提供 buildpack，以作为运行时环境。您还可以使用 Delivery Pipeline 服务将应用程序部署到 {{site.data.keyword.Bluemix_notm}}。
 
 {{site.data.keyword.Bluemix_notm}} 提供了支持 Java 和 Node.js 的内置 buildpack。如果要使用这些语言和框架，那么使用命令行界面部署应用程序时，无需指定 buildpack。由于 {{site.data.keyword.Bluemix_notm}} 是基于 Cloud Foundry 构建的，因此命令缺省为这些 buildpack。
 
@@ -55,7 +55,7 @@ copyright:
   cf push
   ```
   
-  有关 Liberty buildpack 的更多信息，请参阅 [Liberty for Java](../starters/liberty/index.html#liberty)。
+  有关 Liberty buildpack 的更多信息，请参阅 [Liberty for Java](../runtimes/liberty/index.html)。
   
   * 要将 Java Tomcat 应用程序部署到 {{site.data.keyword.Bluemix_notm}}，请使用以下命令：
   
@@ -274,14 +274,14 @@ cf push -f appManifest.yml
     "application_name": "testapp",
     "application_uris": [
         "testapp.AppDomainNameng.mybluemix.net"
-],
+    ],
     "version": "df111903-7d95-4c20-96d9-aad4e97d2a9a",
     "name": "testapp",
     "space_name": "dev",
     "space_id": "c6ed3a8e-436b-43ac-9f96-b676ee335000",
     "uris": [
-        "testapp.AppDomainNamestage1.mybluemix.net"
-],
+        "testapp.AppDomainNameng.mybluemix.net"
+    ],
     "users": null,
     "application_id": "e984bb73-4c4e-414b-84b7-c28c87f84003",
     "instance_id": "09f50e22848d4ec0b943e9e487c23569",
@@ -444,7 +444,11 @@ tmp/
 ```
 
 # 相关链接
-## 常规 
+{: #rellinks}
+
+## 相关链接
+{: #general}
+
 * [使用应用程序清单进行部署](http://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html){:new_window}
 * [CF 清单生成器](http://cfmanigen.mybluemix.net/){:new_window}
 * [cf V6 入门](http://docs.cloudfoundry.org/devguide/installcf/whats-new-v6.html){:new_window}

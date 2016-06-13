@@ -19,13 +19,14 @@ copyright:
 VM 및 운영 체제를 설정하고 관리할 필요 없이 신속하게 앱을 시작하고 실행하려면 런타임을 사용하십시오. {{site.data.keyword.Bluemix}}의 런타임은
 Cloud Foundry를 기반으로 합니다. 즉, Cloud Foundry에 대한
 커뮤니티 빌드팩 또는 도구 플러그인 또한 {{site.data.keyword.Bluemix_notm}}와 함께 작동합니다.
-시작하기 위해 꾸준히 증가하고 있는 런타임 목록을 확인하십시오.{:shortdesc}
+시작하기 위해 꾸준히 증가하고 있는 런타임 목록을 확인하십시오.
+{:shortdesc}
 
 <ul class="runtimeIconList">
 <li>
 <p class="runtimeIcon"><img src="images/javaweb_featured.svg" alt="Java Liberty" /></p>
 <p class="runtimeTitle">Liberty for Java</p>
-<p class="runtimeLink"><a format="html" href="../starters/liberty/index.html" scope="peer">문서 보기</a></p>
+<p class="runtimeLink"><a format="html" href="../runtimes/liberty/index.html" scope="peer">문서 보기</a></p>
 </li>
 <li>
 <p class="runtimeIcon"><img src="images/node_featured.svg" alt="Node.js" /></p>
@@ -38,8 +39,8 @@ Cloud Foundry를 기반으로 합니다. 즉, Cloud Foundry에 대한
 <p class="runtimeLink"><a format="html" href="../starters/xpages/index.html" scope="peer">문서 보기</a></p>
 </li>
 <li>
-<p class="runtimeIcon"><img src="images/go_featured.svg" alt="이동" /></p>
-<p class="runtimeTitle">이동</p>
+<p class="runtimeIcon"><img src="images/go_featured.svg" alt="Go" /></p>
+<p class="runtimeTitle">Go</p>
 <p class="runtimeLink"><a format="html" href="../runtimes/go/index.html" scope="peer">문서 보기</a></p>
 </li>
 <li>

@@ -4,7 +4,7 @@
 
 copyright:
 
-  years: 2014, 2015, 2016
+  2014, 2016
 
  
 
@@ -16,7 +16,7 @@ copyright:
 # Présentation de {{site.data.keyword.Bluemix_notm}}
 {: #overview}
 
-*Dernière mise à jour : 18 janvier 2016*
+*Dernière mise à jour : 9 mai 2016*
 
 {{site.data.keyword.Bluemix}} est la plateforme de cloud ouverte d'{{site.data.keyword.IBM}} qui offre aux développeurs
 d'applications mobiles et Web un accès aux logiciels {{site.data.keyword.IBM_notm}} proposant des fonctions d'intégration, de sécurité, de
@@ -333,8 +333,7 @@ votre code. Lorsque vous êtes prêt, il vous permet de transférer le code de v
 votre environnement de production.
 
     Pour en savoir plus sur {{site.data.keyword.IBM_notm}} Containers, voir
-[{{site.data.keyword.IBM_notm}} Containers](../containers/container_index.html).
-</dd>
+[{{site.data.keyword.IBM_notm}} Containers](../containers/container_index.html).</dd>
 <dt>{{site.data.keyword.IBM_notm}} {{site.data.keyword.virtualmachinesshort}} (bêta)</dt>
     <dd><p>{{site.data.keyword.IBM_notm}} {{site.data.keyword.virtualmachinesshort}} est un environnement de cloud hébergé qui fait partie
 d'{{site.data.keyword.IBM_notm}} {{site.data.keyword.Bluemix_notm}} et que vous pouvez utiliser pour générer, exécuter et surveiller vos
@@ -347,8 +346,7 @@ lancer et gérer vos serveurs virtuels via l'interface utilisateur {{site.data.k
 pouvez utiliser des images de serveur virtuel mises à disposition par {{site.data.keyword.IBM_notm}} ou créer des serveurs virtuels à partir de vos
 propres images personnalisées. Vous pouvez utiliser les fonctions d'{{site.data.keyword.IBM_notm}} {{site.data.keyword.Bluemix_notm}} pour
 masquer la plupart des aspects complexes associés à l'hébergement et à la gestion des applications reposant sur le cloud, comme la journalisation, la mise
-à l'échelle automatique et la surveillance.
-Vous pouvez combiner les services OpenStack et les services {{site.data.keyword.Bluemix_notm}} pour générer et exécuter des applications
+à l'échelle automatique et la surveillance. Vous pouvez combiner les services OpenStack et les services {{site.data.keyword.Bluemix_notm}} pour générer et exécuter des applications
 hybrides. Vous pouvez mettre à disposition des ressources d'infrastructure en fonction des besoins, selon des stratégies d'exploitation et la demande en
 charge de travail. </p>
 <p>
@@ -494,7 +492,7 @@ de générer une application mobile riche.
 Tout d'abord, votre développeur d'intégration crée l'application de back end mobile dans {{site.data.keyword.Bluemix_notm}}. Il fait appel au conteneur boilerplate Mobile Cloud utilisant le contexte d'exécution Node.js qu'il connaît le mieux.
 
 Puis, en utilisant le service Cloud Integration dans l'interface utilisateur {{site.data.keyword.Bluemix_notm}}, il expose une API via un connecteur
-sécurisé. Le développeur d'application télécharge le connecteur sécurisé et l'installe sur site, afin d'activer la communication sécurisée entre son  interface de programme d'application et la base de données. Après avoir créé le noeud final de base de données, il peut consulter tous les schémas et extraire les tables qu'il veut exposer à l'application en tant
+sécurisé. Le développeur d'application télécharge le connecteur sécurisé et l'installe sur site, afin d'activer la communication sécurisée entre son interface de programme d'application et la base de données. Après avoir créé le noeud final de base de données, il peut consulter tous les schémas et extraire les tables qu'il veut exposer à l'application en tant
 qu'API.
 
 Il ajoute ensuite le service Push pour distribuer des notifications mobiles aux clients intéressés. Il ajoute également un service de partenaire commercial pour écrire un tweet lorsqu'un nouvel enregistrement client est créé avec une interface de programme d'application Twitter.
@@ -524,8 +522,12 @@ Le tableau ci-dessous répertorie les langues nationales prises en charge ainsi 
 
 *Tableau 2. Langues nationales prises en charge et codes de langue*
 
-# rellinks
-## general 
+# Liens connexes
+{: #rellinks}
+
+## Liens connexes
+{: #general}
+
 * [Configuration requise pour {{site.data.keyword.Bluemix_notm}}](https://developer.ibm.com/bluemix/support/#prereqs)
 * [Nouveautés de {{site.data.keyword.Bluemix_notm}}](../whatsnew/index.html)
 * [Problèmes {{site.data.keyword.Bluemix_notm}} connus](https://developer.ibm.com/bluemix/support/#issues)

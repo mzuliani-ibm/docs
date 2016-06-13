@@ -15,7 +15,7 @@ copyright:
 # Risoluzione dei problemi di accesso a {{site.data.keyword.Bluemix_notm}} 
 {: #accessing}
 
-*Ultimo aggiornamento: 15 marzo 2016*
+*Ultimo aggiornamento: 16 maggio 2016*
 
 I problemi generali con l'accesso a {{site.data.keyword.Bluemix}} potrebbero includere un utente che non riesce ad accedere a {{site.data.keyword.Bluemix_notm}}, un account bloccato in uno stato In sospeso e così via. Tuttavia, in molti casi, puoi eseguire un ripristino da tali problemi seguendo pochi semplici passi. 
 {:shortdesc}
@@ -57,7 +57,7 @@ Quando navighi nella pagina dei dettagli dell'applicazione, potresti non riuscir
 Quanto tenti di controllare la tua applicazione o i tuoi servizi nella pagina dei dettagli dell'applicazione, continui a visualizzare il seguente messaggio di errore:
 {: tsSymptoms} 
 
-`Sono presenti modifiche non salvate nella pagina nome_applicazione. Salva o annulla le modifiche.`
+`Sono presenti modifiche non salvate nella pagina nomeapplicazione. Salva o annulla le modifiche.`
 
 
 Quando passi il mouse sul campo **ISTANZE** o **QUOTA DI MEMORIA** nel riquadro del runtime, i valori cambiano. Questo è il funzionamento previsto; tuttavia, il messaggio di errore di richiede di salvare le impostazioni della memoria o dell'istanza prima di uscire dalla pagina. 
@@ -173,7 +173,7 @@ per modificare il tuo ruolo. Per identificare il gestore della tua organizzazion
 la seguente procedura:
 {: tsResolve}
 
-  1. Vai al Dashboard {{site.data.keyword.Bluemix_notm}}, fai clic sull'icona  **Account e supporto** ![Account e supporto](images/account_support.svg) nella barra dei menu superiore e seleziona **Gestisci organizzazioni**.
+  1. Vai al Dashboard {{site.data.keyword.Bluemix_notm}}, fai clic sull'icona **Account e supporto** ![Account e supporto](images/account_support.svg) nella barra dei menu superiore e seleziona **Gestisci organizzazioni**.
   2. Vai alla tua organizzazione e visualizza le informazioni del gestore organizzazione
 sulla scheda **UTENTI**.  
   
@@ -306,6 +306,86 @@ applicazioni che non possono essere aggiornate o caratteri double-byte che non v
 
 
 
+## Impossibile passare le applicazioni alla modalità di debug
+{: #ts_debug}
+
+Potresti non essere in grado di abilitare la modalità di debug se la versione della JVM (Java virtual machine) è 8 o precedente. 
+
+
+Dopo che hai selezionato **Enable application debug**, gli strumenti tentano di passare l'applicazione alla modalità di debug. Quindi, il workbench di Eclipse avvia una sessione di debug. Quando gli strumenti hanno abilitato correttamente la modalità di debug, lo stato dell'applicazione web visualizza `Updating mode`, `Developing` e `Debugging`. 
+{: tsSymptoms}
+
+Tuttavia, quando gli strumenti non riescono ad abilitare la modalità di debug, lo stato dell'applicazione web visualizza solo `Updating mode` e `Developing` e non visualizza `Debugging`. Gli strumenti visualizzano inoltre il seguente messaggio di errore nella vista Console:
+
+```
+bluemixMgmgClient - ???? [pool-1-thread-1] .... ERROR --- ClientProxyImpl: Cannot create the websocket connections for MyWebProj
+com.ibm.ws.cloudoe.management.client.exception.ApplicationManagementException: javax.websocket.DeploymentException: The HTTP request to initiate the  WebSocket connection failed
+at com.ibm.ws.cloudoe.management.client.impl.ClientProxyImpl.onNewClientSocket(ClientProxyImpl.java:161)
+at com.ibm.ws.cloudoe.management.client.impl.ClientProxyImpl$RunServerTask.run(ClientProxyImpl.java:267)
+at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:522)
+at java.util.concurrent.FutureTask.run(FutureTask.java:277)
+at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1153)
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+at java.lang.Thread.run(Thread.java:785)
+Caused by: javax.websocket.DeploymentException: The HTTP request to initiate the WebSocket connection failed
+at  org.apache.tomcat.websocket.WsWebSocketContainer.connectToServer(WsWebSocketContainer.java:315)
+at  com.ibm.ws.cloudoe.management.client.impl.ClientProxyImpl.onNewClientSocket(ClientProxyImpl.java:158)
+... 6 more
+Caused by: java.util.concurrent.TimeoutException
+at org.apache.tomcat.websocket.AsyncChannelWrapperSecure$WrapperFuture.get(AsyncChannelWrapperSecure.java:505)
+at org.apache.tomcat.websocket.WsWebSocketContainer.processResponse(WsWebSocketContainer.java:542)
+at org.apache.tomcat.websocket.WsWebSocketContainer.connectToServer(WsWebSocketContainer.java:296)
+... 7 more
+[2016-01-15 13:33:51.075] bluemixMgmgClient - ????  [pool-1-thread-1] .... ERROR --- ClientProxyImpl: Cannot create the  websocket connections for MyWebProj
+com.ibm.ws.cloudoe.management.client.exception.ApplicationManagementException: javax.websocket.DeploymentException: The HTTP request to initiate the  WebSocket connection failed
+at com.ibm.ws.cloudoe.management.client.impl.ClientProxyImpl.onNewClientSocket(ClientProxyImpl.java:161)
+at com.ibm.ws.cloudoe.management.client.impl.ClientProxyImpl$RunServerTask.run(ClientProxyImpl.java:267)
+at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:522)
+at java.util.concurrent.FutureTask.run(FutureTask.java:277)
+at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1153)
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+at java.lang.Thread.run(Thread.java:785)
+Caused by: javax.websocket.DeploymentException: The HTTP request to initiate the WebSocket connection failed
+at org.apache.tomcat.websocket.WsWebSocketContainer.connectToServer(WsWebSocketContainer.java:315)
+at com.ibm.ws.cloudoe.management.client.impl.ClientProxyImpl.onNewClientSocket(ClientProxyImpl.java:158)
+... 6 more
+Caused by: java.util.concurrent.TimeoutException
+at org.apache.tomcat.websocket.AsyncChannelWrapperSecure$WrapperFuture.get(AsyncChannelWrapperSecure.java:505)
+at org.apache.tomcat.websocket.WsWebSocketContainer.processResponse(WsWebSocketContainer.java:542)
+at org.apache.tomcat.websocket.WsWebSocketContainer.connectToServer(WsWebSocketContainer.java:296)
+... 7 more
+```
+ 
+
+Le seguenti versioni della JVM (Java virtual machine) non possono stabilire una sessione di debug: IBM JVM 7, IBM JVM 8 e versioni precedenti di Oracle JVM 8.
+{: tsCauses}
+
+Se il tuo workbench JVM è di una di queste versioni, potresti avere problemi durante la creazione di una sessione di debug. La versione JVM del workbench è normalmente la JVM di sistema del tuo computer lcoale. La tua JVM di sistema non è la stessa della tua applicazione Java Bluemix in esecuzione. L'applicazione Java Bluemix viene quasi sempre eseguita su JVM IBM e alcune volte su JVM OpenJDK.
+  
+
+Per controllare la versione di Java che segue IBM Eclipse Tools for Bluemix, completa la seguente procedura:
+{: tsResolve}
+
+  1. In IBM Eclipse Tools for Bluemix, seleziona **Guida** > **Informazioni su Eclipse** > **Dettagli dell'installazione** > **Configurazione**.
+  2. Trova la proprietà `eclipse.vm` dall'elenco. La seguente linea è un esempio di una proprietà `eclipse.vm`:
+	
+	```
+	eclipse.vm=C:\Program Files\IBM\ibm-java-sdk-80-win-x86_64\bin\..\jre\bin\j9vm\jvm.dll
+	```
+
+  3. Nella riga di comando, immetti `java -version` dalla directory `bin` della tua installazione Java. Vengono visualizzate le informazioni sulla tua versione Java IBM.
+
+Se il JVM workbench JVM è IBM JVM 7 o 8 o una versione precedente di Oracle JVM 8, completa la seguente procedura per passare a Oracle JVM 8:
+
+  1. Scarica e installa Oracle JVM 8, per i dettagli consulta [Java SE Downloads](http://www.oracle.com/technetwork/java/javase/downloads/index.html){: new_window}.
+  2. Riavvia Eclipse.
+  3. Controlla se la proprietà `eclipse.vm` punta alla tua nuova installazione di Oracle JVM 8.
+
+
+
+
+
+
 
 ## Impossibile effettuare le azioni richieste
 {: #ts_authority}
@@ -332,7 +412,7 @@ Non disponi di un adeguato livello di autorità necessario per eseguire le azion
 Per ottenere il livello di autorità appropriato, utilizza uno dei seguenti metodi: 
 {: tsResolve}
  * Seleziona un'altra organizzazione e uno spazio per cui disponi del ruolo di sviluppatore. 
- * Chiedi al gestore organizzazione di modificare il tuo ruolo in sviluppatore oppure di creare uno spazio e assegnarti quindi un ruolo sviluppatore. Per i dettagli, vedi [Gestione delle tue organizzazioni](../admin/adminpublic.html#orgmng){: new_window}.
+ * Chiedi al gestore organizzazione di modificare il tuo ruolo in sviluppatore oppure di creare uno spazio e assegnarti quindi un ruolo sviluppatore. Per i dettagli, vedi [Gestione delle tue organizzazioni](../admin/orgs_spaces.html).
  
 
  
@@ -478,7 +558,7 @@ sufficiente, prova un servizio esterno come [Object Store](../services/ObjectSto
   * Utilizza l'opzione **-k** con il comando `cf push`
 quando distribuisci la tua applicazione a {{site.data.keyword.Bluemix_notm}}:
     ```
-	cf push appname -p app_path -k <quota_disco>
+	cf push nomeapplicazione -p app_path -k <quota_disco>
 	```
 
 	
@@ -635,11 +715,11 @@ con il comando `cf push`:
 {: tsResolve}
 
 ```
-cf push appname -p <percorso_applicazione> -c <comando_di_avvio> -b <null-buildpack>
+cf push nomeapplicazione -p <percorso_applicazione> -c <comando_di_avvio> -b <null-buildpack>
 ```
 Ad esempio:
 ```
-cf push appname -p <percorso_applicazione> -c ./RunMeNow -b https://github.com/ryandotsmith/null-buildpack
+cf push nomeapplicazione -p <percorso_applicazione> -c ./RunMeNow -b https://github.com/ryandotsmith/null-buildpack
 ```
 
 
@@ -686,7 +766,7 @@ accounts](../pricing/index.html#pay-accounts){: new_window}.
 	     Il comando cf apps elenca tutte le applicazioni che hai distribuito nel tuo spazio corrente. Viene visualizzato anche lo stato di ciascuna applicazione.
       2. Per ridurre la quantità di memoria utilizzata dalla tua applicazione, riduci il numero di istanze dell'applicazione e/o il limite massimo di memoria.
 	  ```
-	  cf push <appname> -p <percorso_applicazione> -i <numero_istanza> -m <limite_memoria>
+	  cf push <nomeapplicazione> -p <percorso_applicazione> -i <numero_istanza> -m <limite_memoria>
       ```
 	  3. Riavvia la tua applicazione per rendere effettive le modifiche.
 
@@ -716,7 +796,7 @@ Puoi riavviare manualmente l'applicazione immettendo il seguente comando nell'in
 {: tsResolve}
 
 ```
-cf push <appname> -p <percorso_applicazione>
+cf push <nomeapplicazione> -p <percorso_applicazione>
 ```
 Inoltre, puoi codificare l'applicazione per identificare e risolvere problemi come interruzioni, eccezioni ed errori di connessione. 
 
@@ -877,7 +957,7 @@ seguenti metodi:
   * Se distribuisci la tua applicazione dal prompt dei comandi, utilizza il comando `cf
 push` con l'opzione **-n**. 
     ```
-    cf push <nome_applicazione> -p <percorso_applicazione> -n <nome_host>
+    cf push <nomeapplicazione> -p <percorso_applicazione> -n <nome_host>
     ```
 
 
@@ -901,16 +981,15 @@ o il percorso del file WAR.
  	
 	
 Utilizza l'opzione **-p** per specificare
-un file WAR o aggiungere il percorso del file WAR. Ad
-                                    esempio:
+un file WAR o aggiungere il percorso del file WAR. Ad esempio:
 {: tsResolve}
 
 ```
-cf push MyUniqueAppName01 -p app.war
+cf push nomeunivocodellamiaapplicazione01 -p app.war
 ```
 
 ```
-cf push MyUniqueAppName02 -p "./app.war"
+cf push nomeunivocodellamiaapplicazione02 -p "./app.war"
 ```
 Per ulteriori informazioni sul comando `cf push` , immettere `cf push -h`. 	
 
@@ -1061,7 +1140,7 @@ Il pacchetto di build Liberty utilizza il file `server.xml` per configurare l'ap
  
 
 Puoi risolvere questo problema rimuovendo il file server.xml dal progetto. Il pacchetto di build crea il file `server.xml` dinamicamente quando
-esegui il push dell'applicazione come un'applicazione WAR. Per ulteriori informazioni, vedi [Creazione di applicazioni con Liberty for Java](../starters/liberty/index.html#liberty){: new_window}.
+esegui il push dell'applicazione come un'applicazione WAR. Per ulteriori informazioni, vedi [Liberty for Java](../runtimes/liberty/index.html){: new_window}.
 {: tsResolve}
 	
 	
@@ -1148,7 +1227,7 @@ push` e specifica il pacchetto di build personalizzato usando
 l'opzione **-b**. Ad
                                     esempio:
     ```
-	cf push appname -p app_path -b https://github.com/Sing-Li/bluemix-bp-meteor 
+	cf push nomeapplicazione -p app_path -b https://github.com/Sing-Li/bluemix-bp-meteor 
 	```
 	
   
@@ -1473,11 +1552,11 @@ eseguire il commit delle modifiche, consulta [Git Basics - Recording Changes to 
 la cache utilizzando il seguente comando. Dopo che hai completato questo passo, tutto il contenuto nella directory
 cache della tua applicazione viene eliminato.
   ```
-  cf push appname -p app_path -b <pacchetto_build_null_modificato>
+  cf push nomeapplicazione -p app_path -b <pacchetto_build_null_modificato>
   ```
   4. Esegui il push della tua applicazione con il pacchetto di build più recente che vuoi utilizzare servendoti del seguente comando: 
   ```
-  cf push appname -p app_path -b <ultimo_pacchetto_build>
+  cf push nomeapplicazione -p app_path -b <ultimo_pacchetto_build>
   ```
   
 	

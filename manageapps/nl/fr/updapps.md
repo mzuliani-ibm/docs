@@ -14,7 +14,7 @@ copyright:
 #Mise à jour d'applications
 {: #updatingapps}
 
-*Dernière mise à jour : 17 mars 2016*
+*Dernière mise à jour : 9 mai 2016*
 
 
 Vous pouvez utiliser la commande cf push ou {{site.data.keyword.Bluemix}} DevOps Services pour mettre à jour les applications dans {{site.data.keyword.Bluemix_notm}}. Dans de nombreux cas, même pour les packs de construction intégrés tels que Node.js, vous devez également fournir un paramètre -c afin de spécifier la
@@ -86,12 +86,12 @@ l'application à laquelle ajouter la route. La page **Vue d'ensemble** s'affiche
         Nom d'hôte sur la route que vous désirez utiliser pour votre application.
 	
 Une fois le domaine personnalisé configuré dans {{site.data.keyword.Bluemix_notm}}, vous devez le mapper au domaine de système
-{{site.data.keyword.Bluemix_notm}} sur votre serveur DNS enregistré : 
+{{site.data.keyword.Bluemix_notm}} sur votre serveur DNS enregistré :
 
-  1. Configurez un enregistrement 'CNAME' pour le nom de domaine personnalisé sur votre serveur DNS. 
+  1. Configurez un enregistrement 'CNAME' pour le nom de domaine personnalisé sur votre serveur DNS.
   2. Mappez le nom de domaine personnalisé au noeud final sécurisé pour la région {{site.data.keyword.Bluemix_notm}} dans laquelle s'exécute
 votre application. Utilisez les noeuds finaux de région suivants pour fournir la route d'URL allouée à votre organisation dans
-{{site.data.keyword.Bluemix_notm}} : 
+{{site.data.keyword.Bluemix_notm}} :
   
     * SUD DES ETATS-UNIS : `secure.us-south.bluemix.net`
     * EUROPE-ROYAUME-UNI : `secure.eu-gb.bluemix.net`
@@ -306,8 +306,12 @@ delete`.
   **Résultat :** l'application *Green* répond à l'adresse URL `Blue.mybluemix.net`.
 
 
-# rellinks
-## general 
+# Liens connexes
+{: #rellinks}
+
+## Liens connexes
+{: #general}
+
 * [Déploiements Blue-Green](http://martinfowler.com/bliki/BlueGreenDeployment.html){:new_window}
 * [IBM {{site.data.keyword.Bluemix_notm}} DevOps
 Services](https://hub.jazz.net/){:new_window}

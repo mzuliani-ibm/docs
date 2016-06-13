@@ -18,11 +18,12 @@ copyright:
 # 시나리오: 엔드-투-엔드 개발
 {: #ee}
 
-*마지막 업데이트 날짜: 2015년 11월 6일*
+*마지막 업데이트 날짜: 2016년 4월 18일*
 
 앱을 빌드, 실행 및 배치할 때는
 {{site.data.keyword.Bluemix}} 사용자 인터페이스,
-플랫폼 및 도구 선택을 사용할 수 있습니다. 이 엔드 투 엔드 개발 시나리오에 따라 시작하십시오. {:shortdesc}
+플랫폼 및 도구 선택을 사용할 수 있습니다. 이 엔드 투 엔드 개발 시나리오에 따라 시작하십시오.
+{:shortdesc}
 
 ## 등록
 {: #ee_start}
@@ -52,12 +53,11 @@ copyright:
 
 이 시나리오에서는 Node.js를 사용하여 웹 앱을 개발하고자 합니다.
 현재 미국에 거주하고 있으며 대부분의 앱 사용자도 미국에 있다고 가정합니다. 
-네트워크 대기 시간 감소의 장점을 이용할 수 있도록, 사용자 기반에 근접한 앱을 빌드하고 실행하기로 결정합니다. {{site.data.keyword.Bluemix_notm}}에 로그인한 다음
-사용자 인터페이스의 오른쪽 상단 모서리에서 **미국 남부** 지역을 선택하십시오. 그리고 다음 단계에 따라 앱을 작성하십시오.
-  1. **앱 작성**을 클릭하십시오.
-  2. **웹**을 선택하십시오.
-  3. 웹 앱에 대해 스타터 SDK for Node.js를 선택하고 **계속**을 클릭하십시오.
-  4. 앱에 대한 고유 이름(예: TestNode)을 입력하고 **완료**를 클릭하십시오. 앱 이름은 전체 {{site.data.keyword.Bluemix_notm}} 환경에서 고유해야 합니다. 
+네트워크 대기 시간 감소의 장점을 이용할 수 있도록, 사용자 기반에 근접한 앱을 빌드하고 실행하기로 결정합니다. {{site.data.keyword.Bluemix_notm}}에 로그인한 후 오른쪽 상단에서 계정 이름을 클릭하고 **미국 남부** 지역을 선택하십시오. 그리고 다음 단계에 따라 앱을 작성하십시오.
+
+  1. 더하기 단추를 클릭하십시오.
+  2. **계산**>**CF 애플리케이션**>**SDK for Node.js**를 선택하십시오.
+  3. 앱의 고유 이름(예: TestNode)을 입력하고 **작성**을 클릭하십시오. 앱 이름은 전체 {{site.data.keyword.Bluemix_notm}} 환경에서 고유해야 합니다. 
   
 이제 **코딩 시작** 지시사항이 표시됩니다.
 지시사항에 따라 TestNode의 스타터 코드를 다운로드하고 이를 수정 및 배치할 수 있습니다.
@@ -143,12 +143,12 @@ VCAP_SERVICES 환경 변수의 서비스 인스턴스와 통신하기 위한 애
 사용하여 작업할 {{site.data.keyword.Bluemix_notm}} 지역을
 지정해야 합니다.
 **cf** 명령행 인터페이스는 *https://api.Bluemix_URL*을 사용합니다. 여기서, *Bluemix_URL*은
-지역의 URL입니다. 미국 남부 지역의 URL은 ng.bluemix.net입니다. 다음 명령을 입력하여
+지역의 URL입니다. 미국 남부 지역의 URL은 {{Domain}}입니다. 다음 명령을 입력하여
 {{site.data.keyword.Bluemix_notm}}에 연결하십시오.
   
   ```
   cf api https://api.ng.bluemix.net
-  ```
+	 ```
   
   기타 {{site.data.keyword.Bluemix_notm}} 지역에 연결하는 방법에 대한 자세한 정보는
 {{site.data.keyword.Bluemix_notm}} 지역을 참조하십시오. {{site.data.keyword.Bluemix_notm}} 지역을 지정한 후에
@@ -233,7 +233,8 @@ VCAP_SERVICES 환경 변수가 업데이트되지 않습니다. 애플리케이�
   <dt>url</dt>
   <dd>https://d72837bb-b341-4038-9c8e-7f7232916197-bluemix:b6fc4708942b70a88853177ee52a528d07a43fa8575a69abeb8e044a7b0a7424@d72837bb-b341-4038-9c8e-7f7232916197-bluemix.cloudant.com</dd></dt></dl>
   
-  예를 들어, Node.js 앱이 다음과 같이 이 정보에 액세스할 수 있습니다. ```
+  예를 들어, Node.js 앱이 다음과 같이 이 정보에 액세스할 수 있습니다.
+```
   if (process.env.VCAP_SERVICES) {
 
         var env = JSON.parse(process.env.VCAP_SERVICES);
@@ -253,13 +254,12 @@ VCAP_SERVICES 환경 변수가 존재하지 않는 경우에는 제공된 기본
   
   4. 서비스 인스턴스와 상호작용하십시오.
   
-  신임 정보를 사용하여 서비스 인스턴스와 상호작용할 수 있습니다. 취할 수 있는 조치에는 읽기, 쓰기 및 업데이트가 포함됩니다. 다음 예는 JSON 오브젝트를 {{site.data.keyword.cloudant}} 서비스 인스턴스에 삽입하는 방법을 예시합니다. ```
+  신임 정보를 사용하여 서비스 인스턴스와 상호작용할 수 있습니다. 취할 수 있는 조치에는 읽기, 쓰기 및 업데이트가 포함됩니다. 다음 예는 JSON 오브젝트를 {{site.data.keyword.cloudant}} 서비스 인스턴스에 삽입하는 방법을 예시합니다.
+```
   // create a new message
 var create_message = function(req, res) {
   require('cloudantdb').connect(cloudant.url, function(err, conn) {
-
     var collection = conn.collection('messages');
-
 
     // create message record
     var parsedUrl = require('url').parse(req.url, true);
@@ -307,11 +307,9 @@ var create_message = function(req, res) {
 {{site.data.keyword.Bluemix_notm}}에서는
 앱 비용을 볼 수 있도록 추정기 및 계산기를 제공합니다. 다음과 같은 방법으로 TestNode의 비용을 볼 수 있습니다.
 
-  * 대시보드에서 TestNode를 클릭하십시오. 그리고 개요 페이지의 오른쪽 하단에서 **이 앱의 비용 추정**을 클릭하여
-**SDK for Node.js** 런타임 및 지원의 가격을 보고 오른쪽 상단 모서리에서 앱의 월별 가격 총계를 볼 수 있습니다.
+  * 대시보드에서 TestNode를 클릭하십시오. 그리고 개요 페이지에서 **이 앱의 비용 추정**을 클릭하여 **SDK for Node.js** 런타임 및 지원의 가격 및 앱의 월별 총액을 보십시오.
   
-  * 또는 가격 책정 시트 페이지에서 앱의 서비스 및 런타임의 월별 사용량을 입력하십시오. 예: 각 인스턴스마다 1GB의 메모리가 있는 **SDK for Node.js**의 3개 인스턴스. 
-월별 가격이 계산되어 창의 오른쪽 상단 모서리에 표시됩니다. 
+  * 또는 가격 책정 시트 페이지에서 앱의 서비스 및 런타임의 월별 사용량을 입력하십시오. 예: 각 인스턴스마다 1GB의 메모리가 있는 **SDK for Node.js**의 3개 인스턴스. 월별 가격이 계산되어 표시됩니다. 
 
 또한 런타임 및 서비스의 가격을 계속 추가하고 무료 사용량을 제외하는
 방법을 통해 앱 비용을 수동으로 계산할 수도 있습니다.

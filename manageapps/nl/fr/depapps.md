@@ -1,4 +1,4 @@
-﻿---
+---
 
 copyright:
   years: 2015, 2016
@@ -14,7 +14,7 @@ copyright:
 #Déploiement d'applications
 {: #deployingapps}
 
-*Dernière mise à jour : 17 mars 2016*
+*Dernière mise à jour : 9 mai 2016*
 
 Vous pouvez déployer des applications dans {{site.data.keyword.Bluemix}} via diverses méthodes, notamment en utilisant l'interface de ligne de commande et des environnements de développement intégré (IDE). Vous pouvez également utiliser des manifestes d'application afin de déployer des applications. L'utilisation d'un manifeste d'application vous permet de réduire le nombre d'informations de déploiement que vous devez spécifier à chaque fois que vous déployez une application dans {{site.data.keyword.Bluemix_notm}}.
 {:shortdesc}
@@ -49,19 +49,19 @@ Lorsque vous déployez vos applications sur {{site.data.keyword.Bluemix_notm}} d
 
 Si vous utilisez un pack de construction externe, vous devez spécifier son URL à l'aide de l'option **-b** lorsque vous déployez votre application sur {{site.data.keyword.Bluemix_notm}} depuis l'invite de commande.
 
-  * Pour déployer des packages serveur Liberty dans {{site.data.keyword.Bluemix_notm}}, utilisez la commande suivante depuis votre répertoire source : 
+  * Pour déployer des packages serveur Liberty dans {{site.data.keyword.Bluemix_notm}}, utilisez la commande suivante depuis votre répertoire source :
   
   ```
   cf push
   ```
   
-  Pour plus d'informations sur le pack de construction Liberty, voir [Liberty for Java](../starters/liberty/index.html#liberty).
+  Pour plus d'informations sur le pack de construction Liberty, voir [Liberty for Java](../runtimes/liberty/index.html).
   
   * Pour déployer des applications Java Tomcat dans {{site.data.keyword.Bluemix_notm}}, utilisez la commande suivante :
   
   ```
   cf push nom_app -b https://github.com/cloudfoundry/java-buildpack.git -p chemin_app
-```
+  ```
   
   * Pour déployer des packages WAR dans {{site.data.keyword.Bluemix_notm}}, utilisez la commande suivante :
   
@@ -78,7 +78,7 @@ Si vous utilisez un pack de construction externe, vous devez spécifier son URL 
   
   ```
   cf push nom_app -p chemin_app
-```
+  ```
   
 Un fichier `package.json` doit se trouver dans votre application Node.js pour que l'application soit reconnue par le pack de construction Node.js. Le fichier `app.js` est le script d'entrée pour l'application et peut être spécifié dans le fichier `package.json`. L'exemple suivant représente un fichier `package.json` simple :
 
@@ -251,7 +251,7 @@ plusieurs services, la variable VCAP_SERVICES inclut les informations de connexi
   }
   ```
         
-Vous avez aussi accès aux variables d'environnement qui sont définies par l'agent DEA et les packs de construction. 
+Vous avez aussi accès aux variables d'environnement qui sont définies par l'agent DEA et les packs de construction.
 
 Les variables suivantes sont définies par l'agent DEA :
 
@@ -368,7 +368,6 @@ Les variables définies par les packs de construction sont différentes pour cha
 
 Vous pouvez utiliser l'exemple de code Node.js suivant pour obtenir la valeur de la variable d'environnement VCAP_SERVICES :
 
-
 ```
 if (process.env.VCAP_SERVICES) {
     var env = JSON.parse (process.env.VCAP_SERVICES);
@@ -428,7 +427,6 @@ Variables d'environnement définies par l'utilisateur spécifiques à une applic
 Une fois que vous avez ajouté une variable d'environnement définie par l'utilisateur, vous pouvez utiliser l'exemple de code Node.js suivant pour
 obtenir la valeur de la variable que vous avez définie :
 
-
 ```
 var myEnv = process.env.nom_var_env;
 console.log("My user defined = " + myEnv);
@@ -466,8 +464,12 @@ fichier et sous-répertoire se trouvant dans le répertoire `tmp/` ne sera tél�
 tmp/
 ```
 
-# rellinks
-## general 
+# Liens connexes
+{: #rellinks}
+
+## Liens connexes
+{: #general}
+
 * [Déploiement à l'aide de manifestes d'application](http://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html){:new_window}
 * [Générateur de manifeste CF](http://cfmanigen.mybluemix.net/){:new_window}
 * [Initiation à cf version 6](http://docs.cloudfoundry.org/devguide/installcf/whats-new-v6.html){:new_window}

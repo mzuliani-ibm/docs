@@ -27,6 +27,9 @@
 			"img": "homepage/images/network.svg",
 			"href": "services/network.html",
 			"links": [{
+				"name": "Encadenamiento de bloques",
+				"href": "services/blockchain/index.html"
+			}, {
 				"name": "Red de entrega de contenido (CDN)",
 				"href": "services/cdn/index.html"
 			}, {
@@ -52,9 +55,6 @@
 			"img": "homepage/images/data.svg",
 			"href": "services/data_analytics.html",
 			"links": [{
-				"name": "Analíticas para Apache Hadoop",
-				"href": "services/AnalyticsforHadoop/index.html"
-			}, {
 				"name": "Analíticas para Apache Spark",
 				"href": "services/AnalyticsforApacheSpark/index.html"
 			}, {
@@ -215,7 +215,7 @@
 			"img": "homepage/images/app-services.svg",
 			"href": "services/application_services.html",
 			"links": [{
-				"name": "Reglas empresariales ",
+				"name": "Reglas empresariales",
 				"href": "services/rules/index.html"
 			}, {
 				"name": "Memoria caché de datos",
@@ -242,7 +242,7 @@
 		}, {
 			"title": "Móvil",
 			"img": "homepage/images/mobile.svg",
-			"href": "services/index.html",
+			"href": "services/mobile.html",
 			"links": [{
 				"name": "Probar servicios Bluemix Mobile",
 				"href": "mobile/index.html"
@@ -270,7 +270,7 @@
 			"img": "homepage/images/iot.svg",
 			"href": "services/internetofthings.html",
 			"links": [{
-				"name": "Fundación Internet of Things (Internet de las cosas)",
+				"name": "Plataforma Internet de las cosas",
 				"href": "services/IoT/index.html"
 			}, {
 				"name": "IoT Real-Time Insights",
@@ -281,6 +281,9 @@
 			"img": "homepage/images/private-apis.svg",
 			"href": "services/apis.html",
 			"links": [{
+				"name": "Conexión de API",
+				"href": "services/apiconnect/index.html"
+			}, {
 				"name": "Gestión de API",
 				"href": "services/APIManagement/index.html"
 			}, {

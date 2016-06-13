@@ -14,14 +14,7 @@ copyright:
 
 {: #gettingstartedtemplate}
 
-O serviço {{site.data.keyword.mobilepushfull}} mede o estado, o
-comportamento e o contexto de seus apps móveis, usuários móveis e dispositivos móveis,
-fornecendo serviços de monitoramento para aplicativos móveis que acessam os Recursos em
-nuvem hospedados no {{site.data.keyword.Bluemix_notm}}. Os logs e os dados de
-uso no lado do cliente são reunidos automaticamente e enviados ao serviço Mobile
-Analytics on demand. Os desenvolvedores e administradores podem usar o painel do
-serviço {{site.data.keyword.mobileanalytics_short}} para visualizar os dados que
-são reunidos pelo SDK do cliente.
+
 {:shortdesc}
 
 O serviço de notificações push fornece uma plataforma unificada para enviar e
@@ -41,7 +34,7 @@ atingirem um conjunto específico de usuários usando tags.
 credenciais para um provedor de notificação](t__main_push_config_provider.html)
 2. [Ative o app móvel para receber
 notificações](c_enable_push.html)
-3. [Envie notificações básicas](t_send_push_notifications.html)
+3. [Enviar notificações básicas](t_send_push_notifications.html)
 
 # Links relacionados
 {: #rellinks}

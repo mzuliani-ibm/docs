@@ -1,10 +1,22 @@
+---
+
+ 
+
+copyright:
+
+  years: 2014, 2016
+
+ 
+
+---
+
 {:shortdesc: .shortdesc} 
 {:new_window: target="_blank"}
 
 # Übersicht über {{site.data.keyword.Bluemix_notm}}
 {: #overview}
 
-*Letzte Aktualisierung: 18. Januar 2016*
+*Letzte Aktualisierung: 9. Mai 2016*
 
 {{site.data.keyword.Bluemix}} ist die offene {{site.data.keyword.IBM}} Cloudplattform, die Entwicklern von mobilen Anwendungen und Webanwendungen Zugriff auf {{site.data.keyword.IBM_notm}} Software für Integration, Sicherheit, Transaktion und andere Schlüsselfunktionen sowie auf Software von Geschäftspartnern zur Verfügung stellt.
 {:shortdesc}
@@ -115,7 +127,7 @@ ist über ein VPN (privates VLAN) oder über eine direkte Netzverbindung mit Ihr
 auf der Welt eingerichtet sein. {{site.data.keyword.IBM_notm}} verwaltet die dedizierte Plattform und dedizierte Services,
 sodass Sie sich auf die Erstellung von angepassten Apps konzentrieren können. Darüber hinaus führt {{site.data.keyword.IBM_notm}} alle
 Wartungsoperationen an dedizierten Instanzen während eines von Ihnen ausgewählten
-Wartungsfensters durch.
+Wartungszeitraums durch.
 
 {{site.data.keyword.IBM_notm}} hat verschiedene Services, die in Ihrer dedizierten Umgebung
 verfügbar sind, Sie können jedoch eine Verbindung zu allen öffentlichen Services herstellen. Alle Laufzeiten sind in der dedizierten Umgebung verfügbar.
@@ -227,8 +239,8 @@ Instanzen der App für den Empfang der Anforderung aus.
 wurde zum Hosten skalierbarer, ausfallsicherer Apps und Anwendungsartefakte
 entworfen, die eine bedarfsorientierte Skalierung ermöglichen und gleichzeitig eine hohe Verfügbarkeit
 sowie eine rasche Wiederherstellbarkeit nach Problemen bieten. {{site.data.keyword.Bluemix_notm}} unterscheidet zwischen
-Komponenten, die den Zustand von Interaktionen überwachen (mit Zustandsüberwachung) und Komponenten,
-die den Zustand von Interaktionen nicht überwachen (ohne Zustandsüberwachung). Diese Unterscheidung
+Komponenten, die den Zustand von Interaktionen verfolgen (mit Zustandsüberwachung) und Komponenten,
+die den Zustand von Interaktionen nicht verfolgen (ohne Zustandsüberwachung). Diese Unterscheidung
 ermöglicht es {{site.data.keyword.Bluemix_notm}}, Apps so flexibel
 wie nötig zu versetzen, um Skalierbarkeit und Ausfallsicherheit zu erreichen.
 
@@ -320,7 +332,7 @@ vorhandenen Cloud Foundry-Apps und können Bindungen mit beliebigen der im
 Services haben. Bei Verwendung dieser Infrastruktur entwickeln und verwalten Sie Ihren Anwendungscode und
 {{site.data.keyword.Bluemix_notm}} sorgt für die
 Verwaltung und Wartung der Infrastruktur, die diese Apps stützt.</dd>
-<dt>{{site.data.keyword.IBM_notm}}Containers</dt>
+<dt>{{site.data.keyword.IBM_notm}} Containers</dt>
     <dd>Bei Verwendung der {{site.data.keyword.IBM_notm}} Containers-Infrastruktur können
 Sie Ihre Web-App überall dort ausführen, wo die Containerbereitstellung unterstützt wird. Ein *Container* ist ein Objekt, das alle Elemente enthält, die zur Ausführung
 einer App erforderlich sind. Diese Infrastruktur beinhaltet eine private Registry für Ihre vertrauenswürdigen Images, sodass
@@ -340,33 +352,13 @@ außerdem eine Umgebung bereit, in der Sie Ihren Code ausführen können. Wenn S
 Mittel zur Verfügung, mit denen Sie den Code aus Ihrer Entwicklungsumgebung in Ihre Testumgebung und später
 in Ihre Produktionsumgebung übertragen können.
 
-    Weitere Informationen zu
-{{site.data.keyword.IBM_notm}} Containers finden Sie im Abschnitt zu
-[{{site.data.keyword.IBM_notm}} Containers](../containers/container_index.html) in der Dokumentation zur
-Erstellung von Web-Apps.</dd>
-<dt>Virtual Machines (BETA)</dt>
-    <dd>Mit der {{site.data.keyword.Bluemix_notm}}-Infrastruktur für
-virtuelle Maschinen haben Sie die Möglichkeit, Gruppen virtueller Maschinen in der
-öffentlichen {{site.data.keyword.IBM_notm}} Cloud zu erstellen und zu verwalten. Sie können auch in Ihren
-privaten {{site.data.keyword.IBM_notm}} Clouds, die Sie
-für andere {{site.data.keyword.Bluemix_notm}}-Benutzer verfügbar gemacht haben,
-VM-Gruppen erstellen und verwalten. Die Infrastruktur umfasst Anweisungen zum Herstellen einer Verbindung zu Ihrer lokalen Infrastruktur. In {{site.data.keyword.Bluemix_notm}} ist Unterstützung für Überwachung und Protokollierung
-integriert. Sie können Ihre virtuellen Maschinen mithilfe der
-{{site.data.keyword.Bluemix_notm}}-Benutzerschnittstelle oder
-der OpenStack-APIs der Cloud implementieren und verwalten.
-
-    Virtuelle Maschinen
-unter {{site.data.keyword.Bluemix_notm}} unterstützen
-die Bereitstellung von VM-Gruppen mit automatischer Skalierung. Durch diese Unterstützung
-kann die Anzahl der Instanzen erhöht oder verringert werden,
-abhängig von der CPU-Belastung oder davon, ob eine Instanz ausgefallen ist. Außerdem
-wird der Lastausgleich unterstützt; dies ermöglicht bei Bedarf die Zuweisung virtueller
-IP-Adressen (variabler IP-Adressen).
-
-    Weitere Informationen zu den virtuellen
-{{site.data.keyword.Bluemix_notm}}-Maschinen finden Sie im Abschnitt zu den
-[virtuellen Maschinen](../virtualmachines/vm_index.html) in der Dokumentation zur
-Erstellung von Web-Apps.</dd>
+    Weitere Informationen zu {{site.data.keyword.IBM_notm}} Containers finden Sie unter [{{site.data.keyword.IBM_notm}} Containers](../containers/container_index.html).</dd>
+<dt>{{site.data.keyword.IBM_notm}} {{site.data.keyword.virtualmachinesshort}} (BETA)</dt>
+    <dd><p>{{site.data.keyword.IBM_notm}} {{site.data.keyword.virtualmachinesshort}} ist eine gehostete Cloudumgebung, die zu {{site.data.keyword.IBM_notm}} {{site.data.keyword.Bluemix_notm}} gehört und die Sie nutzen können, um Ihre Anwendungen zu erstellen, auszuführen, zu verwalten und zu überwachen, während Sie gleichzeitig die größtmögliche Kontrolle über Ihre Apps und die Middleware, auf der sie ausgeführt werden, behalten. Verwenden Sie {{site.data.keyword.virtualmachinesshort}}, um Ihre Geschäftslösungen zu isolieren, insbesondere wenn Sie Ihre Apps in einer öffentlichen Cloud bereitstellen. </p>
+<p>    
+Sie können virtuelle Server in öffentlichen und privaten (lokalen) Clouds ausführen und verwalten, die mit OpenStack-Software arbeiten. Sie können Ihre virtuellen Server über die {{site.data.keyword.Bluemix_notm}}-Benutzerschnittstelle oder über den OSC-Client (OpenStackClient) erstellen, starten und verwalten. Sie können die Images für virtuelle Server verwenden, die von {{site.data.keyword.IBM_notm}} bereitgestellt werden, oder virtuelle Server aus eigenen angepassten Images erstellen. Mithilfe von {{site.data.keyword.IBM_notm}} {{site.data.keyword.Bluemix_notm}}-Funktionalität können den weitaus größten Teil der Komplexität auslagern, die mit dem Hosting und der Verwaltung von cloudbasierten Apps verbunden ist, wie zum Beispiel Protokollierung, Autoskalierung und Überwachung. Sie können OpenStack-Services und {{site.data.keyword.Bluemix_notm}}-Services zusammen verwenden, um Hybridanwendungen zu erstellen und auszuführen. Sie können Infrastrukturressourcen nach Bedarf auf der Basis von Betriebsrichtlinien und Workloadanforderungen bereitstellen. </p>
+<p>
+Weitere Informationen zu {{site.data.keyword.IBM_notm}} {{site.data.keyword.virtualmachinesshort}} finden Sie unter [{{site.data.keyword.IBM_notm}} {{site.data.keyword.virtualmachinesshort}}](../virtualmachines/vm_index.html).</p> </dd>
 </dl>
 
 ### Anwendungen
@@ -576,7 +568,11 @@ In der folgenden Tabelle sind die unterstützten Landessprachen und die Sprachen
 *Tabelle 2. Unterstützte Landessprachen und Sprachencodes*
 
 # Zugehörige Links
-## Allgemein 
+{: #rellinks}
+
+## Zugehörige Links
+{: #general}
+
 * [Voraussetzungen für {{site.data.keyword.Bluemix_notm}}](https://developer.ibm.com/bluemix/support/#prereqs)
 * [Neuerungen in {{site.data.keyword.Bluemix_notm}}](../whatsnew/index.html)
 * [Bekannte Probleme in {{site.data.keyword.Bluemix_notm}}](https://developer.ibm.com/bluemix/support/#issues)

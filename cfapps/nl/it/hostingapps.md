@@ -17,7 +17,7 @@ copyright:
 
 #Host delle applicazioni in {{site.data.keyword.Bluemix_notm}}
 
-*Ultimo aggiornamento: 1 dicembre 2015*
+*Ultimo aggiornamento: 9 maggio 2016*
 
 <!--The whole topic is staging only -->
 
@@ -161,6 +161,8 @@ applicazione Cloud Foundry, seleziona un runtime dal Catalogo {{site.data.keywor
 
 Puoi usare i seguenti servizi e strumenti forniti da {{site.data.keyword.Bluemix_notm}}:
 
+*Tabella 1. Strumenti {{site.data.keyword.Bluemix_notm}}*
+
 | Strumento	| Metodo |
 |:------|:--------|
 |Interfaccia riga di comando Cloud Foundry (cf cli)	|Gestisci il tuo codice su un client locale e utilizza l'interfaccia riga di comando
@@ -174,7 +176,7 @@ quando esegui il commit delle modifiche nel codice. Non devi eseguire manualment
 Delivery Pipeline	|Gestisci il tuo codice sul repository DevOps GitHub
 e distribuisci la tua applicazione su {{site.data.keyword.Bluemix_notm}}
 utilizzando DevOps Delivery Pipeline.|
-*Tabella 1. Strumenti {{site.data.keyword.Bluemix_notm}}*
+
 
 Se la piattaforma Cloud Foundry non risponde ai requisiti della tua applicazione,
 puoi utilizzare un contenitore o una VM in cui il runtime venga configurato
@@ -231,10 +233,10 @@ e il tuo spazio.
 <li>Dalla directory della tua applicazione, immetti il comando cf push
 seguito dal nome dell'applicazione. Tale nome deve essere univoco
 nell'ambiente {{site.data.keyword.Bluemix_notm}}.
-<pre>cf push appname</pre></li>
+<pre>cf push nomeapplicazione</pre></li>
 <li>Facoltativo: se utilizzi un pacchetto di build esterno, devi utilizzare l'opzione -b con il comando cf push. Ad
                                     esempio:
-<pre>cf push appname -b buildpack_URL</pre>
+<pre>cf push nomeapplicazione -b buildpack_URL</pre>
 <p>Per ulteriori informazioni, vedi
 Utilizzo di pacchetti di build della community.</p>
 </li></ol>
@@ -296,8 +298,12 @@ che viene impostata per tutte le applicazioni {{site.data.keyword.Bluemix_notm}}
 Foundry.
 
 
-# rellinks
-## general 
+# Link correlati
+{: #rellinks}
+
+## Link correlati
+{: #general}
+
 * [IBM Containers](../containers/container_cli_ov.html)
 * [Virtual Machine](../virtualmachines/vm_index.html)
 * [Introduzione a Delivery Pipeline](../services/DeliveryPipeline/index.html)

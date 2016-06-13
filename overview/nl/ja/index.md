@@ -4,7 +4,7 @@
 
 copyright:
 
-  years: 2014, 2015, 2016
+  years: 2014, 2016
 
  
 
@@ -16,7 +16,7 @@ copyright:
 # {{site.data.keyword.Bluemix_notm}} の概要
 {: #overview}
 
-*最終更新日: 2016 年 1 月 18 日*
+*最終更新日: 2016 年 5 月 9 日*
 
 {{site.data.keyword.Bluemix}} は {{site.data.keyword.IBM}} のオープン・クラウド・プラットフォームであり、モバイルおよび Web の開発者はこれにより、統合、セキュリティー、トランザクション、およびその他の主要な機能のために {{site.data.keyword.IBM_notm}} ソフトウェアにアクセスするほか、ビジネス・パートナーのソフトウェアにもアクセスすることができます。
 {:shortdesc}
@@ -349,7 +349,11 @@ Cloud Integration サービスに接続せずに、プライベート・サー�
 *表 2. サポートされる各国語と言語コード*
 
 # 関連リンク
-## 一般 
+{: #rellinks}
+
+## 関連リンク
+{: #general}
+
 * [{{site.data.keyword.Bluemix_notm}} の前提条件](https://developer.ibm.com/bluemix/support/#prereqs)
 * [{{site.data.keyword.Bluemix_notm}} の新機能](../whatsnew/index.html)
 * [{{site.data.keyword.Bluemix_notm}} の既知の問題](https://developer.ibm.com/bluemix/support/#issues)

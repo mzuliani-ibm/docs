@@ -15,7 +15,7 @@ copyright:
 # Resolução de problemas para acessar o {{site.data.keyword.Bluemix_notm}} 
 {: #accessing}
 
-*Última atualização: 15 de março de 2016*
+*Última atualização: 16 de maio de 2016*
 
 Problemas gerais com o acesso ao {{site.data.keyword.Bluemix}}
 podem incluir um usuário que não foi capaz de efetuar login no {{site.data.keyword.Bluemix_notm}},
@@ -306,6 +306,86 @@ problemas seguindo algumas etapas simples.
 
 
 
+## Impossível alternar apps para o modo de depuração
+{: #ts_debug}
+
+Você poderá não ser capaz de ativar o modo de depuração se a versão da Java virtual machine (JVM) for 8 ou inferior. 
+
+
+Depois que você seleciona **Ativar depuração de aplicativo**, as ferramentas tentam alternar o aplicativo para o modo de depuração. Em seguida, o ambiente de trabalho Eclipse inicia uma sessão de depuração. Quando as ferramentas ativam o modo de depuração com êxito, o status do aplicativo da web exibe `Atualizando modo`, `Desenvolvendo` e `Depurando`. 
+{: tsSymptoms}
+
+No entanto, quando as ferramentas falham em ativar o modo de depuração, o status do aplicativo da web exibe somente `Atualizando modo` e `Desenvolvendo` e não exibe `Depurando`. As ferramentas também podem exibir a mensagem de erro a seguir na visualização de Console:
+
+```
+bluemixMgmgClient - ???? [pool-1-thread-1] .... ERRO --- ClientProxyImpl: Não é possível criar a conexões de websocket para MyWebProj
+com.ibm.ws.cloudoe.management.client.exception.ApplicationManagementException: javax.websocket.DeploymentException: A solicitação de HTTP para iniciar a conexão de WebSocket falhou
+em com.ibm.ws.cloudoe.management.client.impl.ClientProxyImpl.onNewClientSocket(ClientProxyImpl.java:161)
+em com.ibm.ws.cloudoe.management.client.impl.ClientProxyImpl$RunServerTask.run(ClientProxyImpl.java:267)
+em java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:522)
+em java.util.concurrent.FutureTask.run(FutureTask.java:277)
+em java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1153)
+em java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+em java.lang.Thread.run(Thread.java:785)
+Causado por: javax.websocket.DeploymentException: A solicitação de HTTP para iniciar a conexão de WebSocket falhou
+em org.apache.tomcat.websocket.WsWebSocketContainer.connectToServer(WsWebSocketContainer.java:315)
+em com.ibm.ws.cloudoe.management.client.impl.ClientProxyImpl.onNewClientSocket(ClientProxyImpl.java:158)
+... 6 mais
+Causado por: java.util.concurrent.TimeoutException
+em org.apache.tomcat.websocket.AsyncChannelWrapperSecure$WrapperFuture.get(AsyncChannelWrapperSecure.java:505)
+em org.apache.tomcat.websocket.WsWebSocketContainer.processResponse(WsWebSocketContainer.java:542)
+em org.apache.tomcat.websocket.WsWebSocketContainer.connectToServer(WsWebSocketContainer.java:296)
+... 7 mais
+[2016-01-15 13:33:51.075] bluemixMgmgClient - ????  [pool-1-thread-1] .... ERRO --- ClientProxyImpl: Não é possível criar a conexões de websocket para MyWebProj
+com.ibm.ws.cloudoe.management.client.exception.ApplicationManagementException: javax.websocket.DeploymentException: A solicitação de HTTP para iniciar a conexão de WebSocket falhou
+em com.ibm.ws.cloudoe.management.client.impl.ClientProxyImpl.onNewClientSocket(ClientProxyImpl.java:161)
+em com.ibm.ws.cloudoe.management.client.impl.ClientProxyImpl$RunServerTask.run(ClientProxyImpl.java:267)
+em java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:522)
+em java.util.concurrent.FutureTask.run(FutureTask.java:277)
+em java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1153)
+em java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+em java.lang.Thread.run(Thread.java:785)
+Causado por: javax.websocket.DeploymentException: A solicitação de HTTP para iniciar a conexão de WebSocket falhou
+em org.apache.tomcat.websocket.WsWebSocketContainer.connectToServer(WsWebSocketContainer.java:315)
+em com.ibm.ws.cloudoe.management.client.impl.ClientProxyImpl.onNewClientSocket(ClientProxyImpl.java:158)
+... 6 mais
+Causado por: java.util.concurrent.TimeoutException
+em org.apache.tomcat.websocket.AsyncChannelWrapperSecure$WrapperFuture.get(AsyncChannelWrapperSecure.java:505)
+em org.apache.tomcat.websocket.WsWebSocketContainer.processResponse(WsWebSocketContainer.java:542)
+em org.apache.tomcat.websocket.WsWebSocketContainer.connectToServer(WsWebSocketContainer.java:296)
+... 7 mais
+```
+ 
+
+As versões da Java virtual machine (JVM) a seguir não podem estabelecer uma sessão de depuração: IBM JVM 7, IBM JVM 8 e versões anteriores do Oracle JVM 8.
+{: tsCauses}
+
+Se a sua JVM de ambiente de trabalho for uma dessas versões, você poderá ter problemas ao criar uma sessão de depuração. Sua JVM de ambiente de trabalho é geralmente a JVM do sistema de seu computador local. Sua JVM do sistema não é a mesma que a JVM de seu aplicativo Java do Bluemix em execução. O aplicativo Java do Bluemix quase sempre é executado no IBM JVM e, às vezes, no OpenJDK JVM.
+  
+
+Para verificar a versão do Java que o IBM Eclipse Tools for Bluemix executa, conclua as etapas a seguir:
+{: tsResolve}
+
+  1. No IBM Eclipse Tools for Bluemix, selecione **Ajuda** > **Sobre o Eclipse** > **Detalhes da instalação** > **Configuração**.
+  2. Localize a propriedade `eclipse.vm` na lista. A linha a seguir é um exemplo de uma propriedade `eclipse.vm`:
+	
+	```
+	eclipse.vm=C:\Program Files\IBM\ibm-java-sdk-80-win-x86_64\bin\..\jre\bin\j9vm\jvm.dll
+	```
+
+  3. Na linha de comandos, insira `java -version` a partir do diretório `bin` de sua instalação do Java. Suas informações da versão do IBM JVM são exibidas.
+
+Se a sua JVM de ambiente de trabalho for IBM JVM 7 ou 8, ou uma versão anterior do Oracle JVM 8, conclua as etapas a seguir para alternar para o Oracle JVM 8:
+
+  1. Faça download e, em seguida, instale o Oracle JVM 8, veja [Downloads do Java SE](http://www.oracle.com/technetwork/java/javase/downloads/index.html){: new_window} para obter detalhes.
+  2. Reinicie o Eclipse.
+  3. Verifique se a propriedade `eclipse.vm` aponta para sua nova instalação do Oracle JVM 8.
+
+
+
+
+
+
 
 ## Não é possível executar as ações solicitadas
 {: #ts_authority}
@@ -332,7 +412,8 @@ Você não possui o nível apropriado de autoridade necessário para executar as
 Para obter o nível de autoridade apropriado, use um dos métodos a seguir: 
 {: tsResolve}
  * Selecione outra organização e outro espaço para os quais tenha a função de desenvolvedor. 
- * Peça ao gerenciador de organização para mudar sua função para desenvolvedor ou para criar um espaço e, em seguida, designar a função de desenvolvedor a você. Consulte [Gerenciando suas organizações](../admin/adminpublic.html#orgmng){: new_window} para obter detalhes.
+ * Peça ao gerenciador de organização para mudar sua função para desenvolvedor ou para criar um espaço e, em seguida, designar a função de desenvolvedor a você. Consulte
+[Gerenciando suas organizações](../admin/orgs_spaces.html), para obter detalhes.
  
 
  
@@ -1044,7 +1125,7 @@ O buildpack do Liberty usa o arquivo `server.xml` para configurar o app e gera u
 
  
 
-É possível resolver esse problema removendo o arquivo server.xml do projeto. O buildpack cria o arquivo `server.xml` dinamicamente quando você envia por push o app como um app WAR. Para obter mais informações, consulte [Criando Apps com Liberty for Java](../starters/liberty/index.html#liberty){: new_window}.
+É possível resolver esse problema removendo o arquivo server.xml do projeto. O buildpack cria o arquivo `server.xml` dinamicamente quando você envia por push o app como um app WAR. Para obter mais informações, consulte [Liberty for Java](../runtimes/liberty/index.html){: new_window}.
 {: tsResolve}
 	
 	

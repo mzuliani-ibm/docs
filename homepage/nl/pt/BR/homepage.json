@@ -2,9 +2,9 @@
 	"identifier": "ID",
 	"label": "título",
 	"items": [{
-		"id": "Introdução"
+		"id": "GetStarted"
 	}, {
-		"id": "Categorias",
+		"id": "Categories",
 		"items": [{
 			"title": "Cálculo",
 			"img": "homepage/images/compute.svg",
@@ -27,6 +27,9 @@
 			"img": "homepage/images/network.svg",
 			"href": "services/network.html",
 			"links": [{
+				"name": "Cadeia de blocos",
+				"href": "services/blockchain/index.html"
+			}, {
 				"name": "Content Delivery Network (CDN)",
 				"href": "services/cdn/index.html"
 			}, {
@@ -52,9 +55,6 @@
 			"img": "homepage/images/data.svg",
 			"href": "services/data_analytics.html",
 			"links": [{
-				"name": "Analytics for Apache Hadoop",
-				"href": "services/AnalyticsforHadoop/index.html"
-			}, {
 				"name": "Analytics for Apache Spark",
 				"href": "services/AnalyticsforApacheSpark/index.html"
 			}, {
@@ -242,7 +242,7 @@
 		}, {
 			"title": "Mobile",
 			"img": "homepage/images/mobile.svg",
-			"href": "services/index.html",
+			"href": "services/mobile.html",
 			"links": [{
 				"name": "Tentar serviços móveis do Bluemix",
 				"href": "mobile/index.html"
@@ -270,7 +270,7 @@
 			"img": "homepage/images/iot.svg",
 			"href": "services/internetofthings.html",
 			"links": [{
-				"name": "Internet of Things Foundation",
+				"name": "Plataforma do Internet of Things",
 				"href": "services/IoT/index.html"
 			}, {
 				"name": "IoT Real-Time Insights",
@@ -281,6 +281,9 @@
 			"img": "homepage/images/private-apis.svg",
 			"href": "services/apis.html",
 			"links": [{
+				"name": "API Connect",
+				"href": "services/apiconnect/index.html"
+			}, {
 				"name": "API Management",
 				"href": "services/APIManagement/index.html"
 			}, {
@@ -290,8 +293,8 @@
 		}]
 		
 	}, {
-		"id": "Recursos",
-		"descriptionTitle": "Recursos",
+		"id": "Resources",
+		"descriptionTitle": "Resources",
 		"items": [{
 			"title": "Por que Bluemix?",
 			"img": "homepage/images/WhatIsBluemix-icon.svg",

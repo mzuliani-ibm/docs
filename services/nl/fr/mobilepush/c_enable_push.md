@@ -1,7 +1,7 @@
 ---
 
-Copyright :
-  Années : 2015, 2016
+copyright:
+ years: 2015, 2016
 
 ---
 
@@ -9,7 +9,6 @@ Copyright :
 {: #c_enable_push-notifications}
 
 Activez les applications pour la réception et l'envoi de notifications push à vos périphériques.
-
 
 Cette section explique comment configurer vos applications mobiles pour qu'elles reçoivent des notifications push. Elle vous guide tout au long
 de la création de notifications de base, de l'obtention et de l'initialisation du logiciel SDK ou du plug-in, et de l'enregistrement de votre périphérique

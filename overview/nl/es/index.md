@@ -4,7 +4,7 @@
 
 copyright:
 
-  years: 2014, 2015, 2016
+  years: 2014, 2016
 
  
 
@@ -16,7 +16,7 @@ copyright:
 # Visión general de {{site.data.keyword.Bluemix_notm}}
 {: #overview}
 
-*Última actualización: 18 de enero de 2016*
+*Última actualización: 9 de mayo de 2016*
 
 {{site.data.keyword.Bluemix}} es la plataforma de nube abierta de {{site.data.keyword.IBM}} que proporciona a los desarrolladores de apps para móvil y web acceso al software de {{site.data.keyword.IBM_notm}} para funciones de integración, seguridad, transacción y otras funciones clave, así como a software de terceros.
 {:shortdesc}
@@ -222,7 +222,7 @@ Foundry</dt>
     Los {{site.data.keyword.IBM_notm}} Containers se utilizan para ejecutar contenedores de Docker en un entorno de nube alojado. Docker
 añade un motor para desplegar una app al entorno virtual para ejecutar los contenedores. También proporciona un entorno para ejecutar el código. Cuando esté preparado, proporcionará los medios por los cuales transferir el código desde el entorno de desarrollo a su entorno de prueba y luego al entorno de producción.
 
-    Para obtener más información sobre {{site.data.keyword.IBM_notm}} Containers, consulte [{{site.data.keyword.IBM_notm}} Containers](../containers/container_index.html). </dd>
+    Para obtener más información sobre {{site.data.keyword.IBM_notm}} Containers, consulte [{{site.data.keyword.IBM_notm}} Containers](../containers/container_index.html).</dd>
 <dt>{{site.data.keyword.IBM_notm}} {{site.data.keyword.virtualmachinesshort}} (BETA)</dt>
     <dd><p>{{site.data.keyword.IBM_notm}} {{site.data.keyword.virtualmachinesshort}} es un entorno de nube alojado,
 parte de {{site.data.keyword.IBM_notm}} {{site.data.keyword.Bluemix_notm}}, que puede utilizar para construir,
@@ -238,7 +238,7 @@ para eliminar la mayoría de las complejidades asociadas al alojamiento y gesti�
 aplicaciones basadas en nube, como el registro, escalado automático y la supervisión. Puede usar servicios OpenStack y servicios {{site.data.keyword.Bluemix_notm}} juntos para construir y ejecutar aplicaciones híbridas. Puede suministrar recursos de
 infraestructura según sea necesario, en base a las políticas operativas y la demanda de carga de trabajo. </p>
 <p>
-Para más información sobre {{site.data.keyword.IBM_notm}} {{site.data.keyword.virtualmachinesshort}}, consulte [{{site.data.keyword.IBM_notm}} {{site.data.keyword.virtualmachinesshort}}](../virtualmachines/vm_index.html). </p> </dd>
+Para más información sobre {{site.data.keyword.IBM_notm}} {{site.data.keyword.virtualmachinesshort}}, consulte [{{site.data.keyword.IBM_notm}} {{site.data.keyword.virtualmachinesshort}}](../virtualmachines/vm_index.html).</p> </dd>
 </dl>
 
 ### Aplicaciones
@@ -376,8 +376,12 @@ La siguiente tabla lista los idiomas nacionales soportados y los códigos de idi
 
 *Tabla 2. Idiomas nacionales soportados y códigos de idioma*
 
-# rellinks
-## general 
+# Enlaces relacionados
+{: #rellinks}
+
+## Enlaces relacionados
+{: #general}
+
 * Requisitos previos de [{{site.data.keyword.Bluemix_notm}}](https://developer.ibm.com/bluemix/support/#prereqs)
 * [Novedades de {{site.data.keyword.Bluemix_notm}}](../whatsnew/index.html)
 * Problemas conocidos de [{{site.data.keyword.Bluemix_notm}}](https://developer.ibm.com/bluemix/support/#issues)

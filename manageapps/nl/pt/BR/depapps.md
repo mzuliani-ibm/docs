@@ -14,7 +14,7 @@ copyright:
 #Implementando apps
 {: #deployingapps}
 
-*Última atualização: 17 de março de 2016*
+*Última atualização: 9 de maio de 2016*
 
 É possível implementar aplicativos no
 {{site.data.keyword.Bluemix}}
@@ -101,7 +101,7 @@ a partir do prompt de comandos.
   Para obter mais informações sobre
 o Liberty Buildpack, consulte
 [Liberty
-for Java](../starters/liberty/index.html#liberty).
+for Java](../runtimes/liberty/index.html).
   
   * Para implementar aplicativos Java Tomcat no {{site.data.keyword.Bluemix_notm}}, use o comando a seguir:
   
@@ -552,8 +552,12 @@ não serão transferidos por upload para o {{site.data.keyword.Bluemix_notm}}.
 tmp/
 ```
 
-# rellinks
-## general 
+# Links Relacionados
+{: #rellinks}
+
+## Links Relacionados
+{: #general}
+
 * [Implementando com manifests do aplicativo](http://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html){:new_window}
 * [Gerador de manifest CF](http://cfmanigen.mybluemix.net/){:new_window}
 * [Introdução ao cf v6](http://docs.cloudfoundry.org/devguide/installcf/whats-new-v6.html){:new_window}

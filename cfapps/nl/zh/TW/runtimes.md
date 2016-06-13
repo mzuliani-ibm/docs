@@ -16,14 +16,14 @@ copyright:
 # 執行時期概觀
 *前次更新：2015 年 11 月 11 日*
 
-使用執行時期可快速啟動並執行您的應用程式，而不需要設定及管理 VM 和作業系統。{{site.data.keyword.Bluemix}} 中的執行時期是根據 Cloud Foundry，這表示 Cloud Foundry 的社群建置套件或工具外掛程式也會與 {{site.data.keyword.Bluemix_notm}} 一起運作。
-請參閱要開始使用的成長的執行時期清單。{:shortdesc}
+使用執行時期可快速啟動並執行您的應用程式，而不需要設定及管理 VM 和作業系統。{{site.data.keyword.Bluemix}} 中的執行時期是以 Cloud Foundry 為基礎，這表示 Cloud Foundry 的社群建置套件或工具外掛程式也能與 {{site.data.keyword.Bluemix_notm}} 搭配運作。若要開始使用，請參閱持續增加中的執行時期清單。
+{:shortdesc}
 
 <ul class="runtimeIconList">
 <li>
 <p class="runtimeIcon"><img src="images/javaweb_featured.svg" alt="Java Liberty" /></p>
 <p class="runtimeTitle">Liberty for Java</p>
-<p class="runtimeLink"><a format="html" href="../starters/liberty/index.html" scope="peer">檢視文件</a></p>
+<p class="runtimeLink"><a format="html" href="../runtimes/liberty/index.html" scope="peer">檢視文件</a></p>
 </li>
 <li>
 <p class="runtimeIcon"><img src="images/node_featured.svg" alt="Node.js" /></p>

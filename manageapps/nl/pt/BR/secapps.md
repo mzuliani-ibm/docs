@@ -14,7 +14,7 @@ copyright:
 #Protegendo apps
 {: #securingapps}
 
-*Última atualização: 17 de março de 2016*
+*Última atualização: 9 de maio de 2016*
 
 É possível proteger seus aplicativos fazendo upload de certificados SSL e restringindo acesso aos aplicativos.
 {:shortdesc}
@@ -88,20 +88,12 @@ para fazer um upload de certificado grátis.
 Antes que seja possível fazer upload dos certificados, deve-se criar uma
 solicitação de assinatura de certificado. Consulte [Criando certificate signing requests](#ssl_csr).
 
-Para entregar
-o certificado SSL adequadamente, deve-se usar os endereços IP a seguir para configurar
-o servidor DNS ao criar um domínio customizado para fornecer a
-rota da URL alocada para a sua organização no {{site.data.keyword.Bluemix_notm}}.
+Quando você usa um domínio customizado, para entregar o certificado SSL, use os terminais da região a seguir, para fornecer a rota da URL que é alocada para a sua organização no Bluemix:
 
-* EUA-SUL: 75.126.81.68
-* EU-GB: 5.10.124.142
-* AU-SYD: 168.1.35.166
+  * US-South: secure.us-south.bluemix.net 
+  * EU-GB: secure.eu-gb.bluemix.net
+  * AU-SYD: secure.au-syd.bluemix.net 
 
-Os endereços IP que você usa para ambientes dedicados
-são diferentes. Entre em contato com seu representante IBM para obter o endereço IP
-para um ambiente dedicado.
-
-Para obter mais informações sobre como criar um domínio customizado, consulte [Criando e usando um domínio customizado](updapps.html#domain).
 
 Para fazer upload de um certificado para seu aplicativo:
 
@@ -114,7 +106,7 @@ rotas e acesso de app** no menu do aplicativo.
 certificado**.
 
 4. Navegue para fazer upload de um certificado, uma chave privada e, como
-opção, um certificado intermediário. Também é possível selecionar a caixa de seleção para ativar a solicitação de um certificado de cliente.
+opção, um certificado intermediário. Também é possível marcar a caixa de seleção para ativar solicitações de um certificado de cliente. Se você ativar a opção para solicitar um certificado de cliente, deverá fazer upload de um arquivo de armazenamento confiável de certificado de cliente que define o acesso de usuário permitido para seu domínio customizado.
 
   **Certificado**
     
@@ -123,13 +115,15 @@ certificado, permitindo assim que o proprietário do certificado seja autenticad
 certificado é emitido por uma autoridade de certificação e é assinado digitalmente por
 essa autoridade.
     
+    Um certificado é geralmente emitido e assinado por uma autoridade de certificação. No entanto, para propósitos de teste e desenvolvimento é possível usar um certificado autoassinado.
+    
     Os
 tipos de certificados a seguir são suportados no
 {{site.data.keyword.Bluemix_notm}}:
-    
-      * PEM (pem, .crt, .cer e .cert)
-	  * DER (.der ou .cer )
-      * PKCS #7 (p7b, p7r, spc)
+
+	* PEM (pem, .crt, .cer e .cert)
+	* DER (.der ou .cer )
+	* PKCS #7 (p7b, p7r, spc)
 	  
   **Chave privada**
   
@@ -161,7 +155,7 @@ produção.
   
   **Ativar solicitação de certificado de cliente**
   
-    Se você ativar essa opção, um usuário que tentar acessar um domínio protegido por SSL será solicitado a fornecer um certificado do lado do cliente. Por exemplo, em um navegador da web, quando um usuário tentar acessar um domínio protegido por SSL, o navegador da web solicitará ao usuário que forneça um certificado de cliente para o domínio.
+    Se você ativar essa opção, um usuário que tentar acessar um domínio protegido por SSL será solicitado a fornecer um certificado do lado do cliente. Por exemplo, em um navegador da web, quando um usuário tentar acessar um domínio protegido por SSL, o navegador da web solicitará ao usuário que forneça um certificado de cliente para o domínio. Use a opção de upload de arquivo de **Armazenamento confiável de certificado de cliente** para definir os certificados do lado do cliente que permitem acessar seu domínio customizado.
   
   **Nota:** o recurso de certificado customizado no gerenciamento de domínio do {{site.data.keyword.Bluemix_notm}} depende da extensão Server Name Indication (SNI) do protocolo de Segurança da Camada de Transporte (TLS). Portanto, o código do cliente que acessa os
 aplicativos {{site.data.keyword.Bluemix_notm}}
@@ -169,5 +163,17 @@ protegidos pelos certificados customizados deve suportar a extensão SNI na impl
 do TLS. Para obter mais informações, consulte
 [seção
 7.4.2 do RFC 4346](http://tools.ietf.org/html/rfc4346#section-7.4.2){:new_window}.
+
+  **Armazenamento confiável de certificado de cliente**
+  
+  O armazenamento confiável de certificado de cliente é um arquivo que contém os certificados de cliente para os usuários que você deseja permitir o acesso a seu aplicativo. Se você ativar a opção para solicitar um certificado de cliente, deverá fazer upload de um arquivo de armazenamento confiável de certificado de cliente. 
+  
+   Os
+tipos de certificados a seguir são suportados no
+{{site.data.keyword.Bluemix_notm}}:
+    
+      * PEM (pem, .crt, .cer e .cert)
+	  * DER (.der ou .cer )
+      * PKCS #7 (p7b, p7r, spc)
 
 Para excluir um certificado ou substituir um certificado existente por um novo, acesse **Gerenciar organizações** > **Domínios** > **Visualizar certificado** para gerenciar seus certificados.

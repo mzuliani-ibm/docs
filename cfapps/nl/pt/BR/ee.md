@@ -18,7 +18,7 @@ copyright:
 # Cenário: Desenvolvimento de ponta a ponta
 {: #ee}
 
-*Última atualização: 6 de novembro de 2015*
+*Última atualização: 18 de abril de 2016*
 
 É possível usar a interface com o usuário, a plataforma e uma
 seleção de ferramentas do {{site.data.keyword.Bluemix}} ao construir, executar
@@ -51,13 +51,13 @@ para menor latência de rede, privacidade de dados e melhor disponibilidade. Con
 
 Para este cenário, você deseja desenvolver um app da web usando Node.js. Suponha que você esteja nos EUA e a maioria dos usuários do app também esteja
 nos EUA. Você decide construir e executar o app próximo da base do
-usuário, para se beneficiar da latência de rede inferior. Depois de efetuar login no {{site.data.keyword.Bluemix_notm}}, selecione a região **Sul
-dos EUA** no canto superior direito da interface com o usuário. É possível, então, executar as
+usuário, para se beneficiar da latência de rede inferior. Após efetuar login no {{site.data.keyword.Bluemix_notm}}, clique em seu nome da conta no canto superior direito e selecione a região
+**Sul dos EUA**. É possível, então, executar as
 etapas a seguir para criar um app:
-  1. Clique em **CRIAR UM APP**.
-  2. Selecione **Web**.
-  3. Selecione o SDK for Node.js iniciador para seu app da web e clique em **Continuar**.
-  4. Digite um nome exclusivo para o app, por exemplo, TestNode, e clique em **Concluir**. O nome do app deve ser exclusivo
+
+  1. Clique no botão mais.
+  2. Selecione **Calcular**>**Aplicativos de CF**>**SDK para Node.js**.
+  3. Digite um nome exclusivo para o seu aplicativo, por exemplo, TestNode e clique em **Criar**. O nome do app deve ser exclusivo
 em todo o ambiente do {{site.data.keyword.Bluemix_notm}}.
   
 Agora é possível ver as instruções de **Iniciar codificação**. É possível seguir as instruções para fazer download do código de início de TestNode, modificá-lo e implementá-lo.
@@ -147,7 +147,8 @@ exemplo:
 	
     **Requisito:** certifique-se de sempre usar a versão mais recente da ferramenta de linha de comandos cf.
   3. Depois de instalar a interface de linha de comandos **cf**, deve-se especificar
-com qual região do {{site.data.keyword.Bluemix_notm}} você deseja trabalhar usando o comando **cf api**. A interface de linha de comandos **cf** usa *https://api.Bluemix_URL*, em que *Bluemix_URL* é a URL da região. A URL da região sul do EUA é ng.bluemix.net. Insira o comando a seguir para se conectar ao
+com qual região do {{site.data.keyword.Bluemix_notm}} você deseja trabalhar usando o comando **cf api**. A interface de linha de comandos **cf** usa *https://api.Bluemix_URL*, em que *Bluemix_URL* é a URL da região. A URL
+da região Sul dos EUA é {{Domain}}. Insira o comando a seguir para se conectar ao
 {{site.data.keyword.Bluemix_notm}}:
   
   ```
@@ -313,11 +314,10 @@ abonos grátis.
 O {{site.data.keyword.Bluemix_notm}} fornece
 um estimador e uma calculadora para você ver o custo de seu app. É possível ver o custo de TestNode das maneiras a seguir:
 
-  * No painel, clique em TestNode. Em seguida, na página Visão geral, clique em **estimar o custo deste app** no lado inferior direito para ver o preço de tempo de execução e Suporte do **SDK for Node.js**, além do preço mensal total de seu app no canto superior direito.
+  * No painel, clique em TestNode. Em seguida, na página Visão geral, clique em **estimar o custo deste app** para ver o preço de tempo de execução e suporte do **SDK for Node.js** e o preço mensal total de seu app.
   
   * Ou, na página Folha de precificação, digite o uso mensal do tempo de execução e serviços de seu app. Por exemplo, 3 instâncias de **SDK for Node.js** com 1 GB
-de memória para cada instância. O preço mensal é calculado e exibido no canto superior direito
-da janela.
+de memória para cada instância. O preço mensal é calculado e exibido.
 
 Também é possível calcular seu custo de app manualmente, somando os
 preços de seus tempos de execução e serviços e deduzindo o abono grátis. Para obter mais informações, consulte Calculando seus custos manualmente.

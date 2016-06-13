@@ -4,7 +4,7 @@
 
 copyright:
 
-  years: 2015，2016
+  2015，2016
 
  
 
@@ -18,7 +18,7 @@ copyright:
 # Scénario : Développement de bout en bout
 {: #ee}
 
-*Dernière mise à jour : 6 novembre 2015*
+*Dernière mise à jour : 18 avril 2016*
 
 La plateforme et l'interface utilisateur {{site.data.keyword.Bluemix}}, ainsi qu'une sélection d'outils associés,
 vous permettent de construire, exécuter et déployer vos applications. Suivez ce scénario de développement de bout en bout pour
@@ -48,12 +48,12 @@ disponibilité. Voir Régions pour des détails.
 
 Dans ce scénario, vous allez développer une application Web avec Node.js. Supposez que vous vous trouvez aux Etats-Unis et que la majorité des
 utilisateurs de votre application se situent également aux Etats-Unis. Vous décidez de construire et d'exécuter votre application près de votre base
-utilisateur pour pouvoir bénéficier d'un temps d'attente des réseaux plus court. Une fois connecté à {{site.data.keyword.Bluemix_notm}}, sélectionnez la région **Sud
-des Etats-Unis** dans le coin supérieur droit de l'interface utilisateur. Ensuite, procédez comme suit pour créer une application :
-  1. Cliquez sur **Créer une application**.
-  2. Sélectionnez **Web**.
-  3. Sélectionnez le module de démarrage SDK for Node.js pour votre application Web et cliquez sur **Continuer**.
-  4. Entrez un nom unique pour votre application, par exemple TestNode, et cliquez sur **Terminer**. Le nom de
+utilisateur pour pouvoir bénéficier d'un temps d'attente des réseaux plus court. Une fois connecté à {{site.data.keyword.Bluemix_notm}}, cliquez
+sur le nom de votre compte dans le coin supérieur droit et sélectionnez la région **Sud des Etats-Unis**. Ensuite, procédez comme suit pour créer une application :
+
+  1. Cliquez sur le bouton plus. 
+  2. Sélectionnez **Calcul**>**Applications CF**>**SDK for Node.js**.
+  3. Entrez un nom unique pour votre application, par exemple TestNode, et cliquez sur **Créer**. Le nom de
 l'application doit être unique dans l'ensemble de l'environnement {{site.data.keyword.Bluemix_notm}}.
   
 A présent, vous pouvez lire les instructions **Commencer le codage**. Vous pouvez suivre les instructions de téléchargement, de
@@ -142,7 +142,7 @@ cf.
   3. Une fois que vous avez installé l'interface de ligne de commande **cf**, vous devez spécifier la région
 {{site.data.keyword.Bluemix_notm}} que vous voulez utiliser avec la commande **cf api**. L'interface de ligne de commande
 **cf** utilise *https://api.URL_Bluemix*, où *URL_Bluemix* est l'adresse URL de la région. L'adresse URL de la
-région Sud des Etats-Unis est ng.bluemix.net. Entrez
+région Sud des Etats-Unis est {{Domain}}. Entrez
 la commande suivante pour vous connecter à {{site.data.keyword.Bluemix_notm}} :
   
   ```
@@ -301,14 +301,13 @@ ne vous facture rien sauf si votre utilisation dépasse les franchises.
 {{site.data.keyword.Bluemix_notm}} met à disposition un estimateur et une calculatrice pour que vous puissiez
 afficher le coût de votre application. Vous pouvez afficher le coût de TestNode de plusieurs façons :
 
-  * Dans votre tableau de bord, cliquez sur TestNode. Ensuite, dans la page Vue d'ensemble, cliquez sur **Estimer le coût de cette
-application** en bas à
-droite pour afficher le prix du contexte d'exécution **SDK for Node.js** et du support, ainsi que le prix mensuel total de votre application dans le coin
-supérieur droit.
+  * Dans votre tableau de bord, cliquez sur TestNode. Puis, sur la page de présentation, cliquez sur **Estimer le coût de cette
+application** pour examiner la tarification de l'environnement d'exécution et du support de **SDK for Node.js**, et le prix mensuel
+total de
+votre application.
   
   * Ou bien, dans la page Fiche des prix, entrez l'utilisation mensuelle du contexte d'exécution et des services pour votre application, par
-exemple 3 instances de **SDK for Node.js** avec 1 Go de mémoire pour chaque instance. Le prix mensuel est calculé et affiché dans le
-coin supérieur droit de la fenêtre.
+exemple 3 instances de **SDK for Node.js** avec 1 Go de mémoire pour chaque instance. Le prix mensuel est calculé et affiché.
 
 Vous pouvez aussi calculer le coût de votre application manuellement en ajoutant les prix de vos contextes d'exécution et de vos services et en
 déduisant les franchises. Pour plus d'informations, voir Calcul manuel de vos coûts.

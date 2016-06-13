@@ -4,7 +4,7 @@
 
 copyright:
 
-  years: 2015, 2016
+  2015, 2016
 
  
 
@@ -51,12 +51,13 @@ copyright:
 # Tarification
 {: #pricing}
 
-*Dernière mise à jour : 4 janvier 2016*
+*Dernière mise à jour : 16 mai 2016*
 
 Vous pouvez exécuter des applications dans {{site.data.keyword.Bluemix}} et essayer des services
 {{site.data.keyword.Bluemix_notm}} gratuitement. Vous pouvez vous inscrire pour bénéficier d'un essai gratuit de
-30 jours offrant des franchises supplémentaires, notamment un support gratuit. Au bout de 30 jours, vous pouvez choisir un type de compte et ne payer que ce que vous utilisez au-delà des franchises. Bluemix met à disposition une calculatrice des coûts pour que vous puissiez estimer le coût à l'avance, ainsi que la vue Détails sur l'utilisation pour que vous
-puissiez vérifier le coût réel après avoir construit vos applications.
+30 jours offrant des franchises supplémentaires, notamment un support gratuit. Au bout de 30 jours, vous pouvez choisir un type de compte et ne payer que ce que vous utilisez au-delà des franchises. 
+Bluemix met à disposition une calculatrice des coûts pour que vous puissiez estimer le coût à l'avance, ainsi que la vue Tableau de bord de l'utilisation pour que
+vous puissiez vérifier le coût réel après avoir construit vos applications.
 {:shortdesc}
 
 ## Essai gratuit
@@ -94,9 +95,9 @@ ne sont plus illimitées comme celles proposées par de nombreux services IBM au
 ##Coût
 {: #what_it_costs}
 
-Le prix varie selon les ressources utilisées par un service, un contexte d'exécution, un conteneur, une machine virtuelle ou une option de
-support spécifique. Les ressources peuvent correspondre au nombre d'appels d'API, au nombre d'instances, à la mémoire, à l'espace de stockage, etc. {{site.data.keyword.Bluemix_notm}} met également à disposition des estimateurs de coût détaillé ainsi qu'une calculatrice de prix au centime près pour vous aider à planifier vos frais. Vous
-pouvez vérifier le coût réel une fois que vous avez construit vos applications dans la vue *Détails sur l'utilisation*. Pour des informations
+Le prix varie selon les ressources utilisées par un service, un contexte d'exécution, un conteneur, un serveur virtuel ou une option de support
+spécifique. Les ressources peuvent correspondre au nombre d'appels d'API, au nombre d'instances, à la mémoire, à l'espace de stockage, etc. {{site.data.keyword.Bluemix_notm}} met également à disposition des estimateurs de coût détaillé ainsi qu'une calculatrice de prix au centime près pour vous aider à planifier vos frais. 
+Vous pouvez vérifier le coût réel une fois que vous avez construit vos applications dans la vue *Tableau de bord de l'utilisation*. Pour des informations
 plus détaillées sur les frais, voir [Paiement](index.html#charges).
  
 
@@ -133,7 +134,7 @@ Avec un compte de type Paiement à la carte, vous êtes facturé en fonction de 
 {{site.data.keyword.Bluemix_notm}}. Avec un compte de type Abonnement, vous pouvez bénéficier d'une remise mensuelle contre un engagement financier
 mensuel minimum. L'environnement {{site.data.keyword.Bluemix_notm}} dédié et l'environnement {{site.data.keyword.Bluemix_notm}} local sont facturés selon des contrats annuels.
 
-Vous pouvez convertir votre essai gratuit en compte de facturation à tout moment. Toutes les informations du compte sans facturation dans le cadre de votre essai gratuit, ainsi que les solutions {{site.data.keyword.Bluemix_notm}} seront fusionnées directement dans le nouveau compte de facturation.
+Vous pouvez convertir à tout moment votre version d'évaluation en compte facturable. Toutes les informations du compte sans facturation dans le cadre de votre essai gratuit, ainsi que les solutions {{site.data.keyword.Bluemix_notm}} seront fusionnées directement dans le nouveau compte de facturation.
 
 Après avoir créé un compte de facturation, vous pouvez éditer les informations que vous avez indiquées. Cliquez sur l'icône **Paramètres de
 profil** dans le coin supérieur droit de l'interface utilisateur {{site.data.keyword.Bluemix_notm}}, puis cliquez sur **Compte &gt; Type de compte** pour éditer
@@ -369,14 +370,14 @@ sur un modèle de tarification à tranches fixes :
 |5200 |	Le nombre d'éléments correspond à la tranche 5 ; par conséquent, le prix total est 5000 $. |	5000 $|
 *Tableau 6. Calcul du prix avec le modèle de tarification à tranches fixes*
 
-###Franchises pour les machines virtuelles
+### Franchises pour les serveurs virtuels 
 {: #vms}
 
-Vous pouvez utiliser des machines virtuelles {{site.data.keyword.Bluemix_notm}} dans le cloud public IBM sous forme de fonctions bêta gratuites. Des franchises sont proposées pour le nombre d'images de machine virtuelle que vous pouvez créer, le nombre d'adresses
-IP qui sont affectées, ainsi que la quantité de mémoire pouvant être utilisée.
+Vous pouvez utiliser des serveurs virtuels {{site.data.keyword.Bluemix_notm}} dans le cloud public IBM sous forme de fonctions bêta
+gratuites. Des franchises sont proposées pour le nombre d'images de serveur virtuel que vous pouvez créer, le nombre d'adresses IP qui sont affectées,
+ainsi que la quantité de mémoire pouvant être utilisée.
 
-Voici les franchises dont vous bénéficiez avec les machines virtuelles
-{{site.data.keyword.Bluemix_notm}} bêta :
+Voici les franchises dont vous bénéficiez avec les serveurs virtuels {{site.data.keyword.Bluemix_notm}} bêta :
 
 * 8 instances
 * 8 unités centrales virtuelles
@@ -384,9 +385,8 @@ Voici les franchises dont vous bénéficiez avec les machines virtuelles
 * 200 Go de stockage de bloc
 * 4 adresses IP publiques
 
-De plus, vous pouvez utiliser l'infrastructure Virtual Machines pour mettre à disposition des machines
-virtuelles dans vos clouds privés {{site.data.keyword.Bluemix_notm}}, conformément aux limites et aux quotas de
-vos clouds privés.
+De plus, vous pouvez utiliser l'infrastructure des serveurs virtuels pour mettre à disposition des serveurs virtuels dans vos clouds privés
+{{site.data.keyword.Bluemix_notm}}, conformément aux limites et aux quotas de vos clouds privés.
 
 
 ##Estimation des coûts
@@ -402,10 +402,15 @@ application.
 contextes d'exécution et des services que vous avez entrées.
 * Vous pouvez aussi calculer votre coût manuellement.
 
-###Utilisation de la calculatrice des coûts
+###Utilisation des calculatrices de coût
 {: #calculator}
 
-Vous pouvez estimer rapidement le prix de votre application à l'aide de la calculatrice des coûts dans la page Tarification de {{site.data.keyword.Bluemix_notm}}. Accédez à la page Tarification de {{site.data.keyword.Bluemix_notm}} et cliquez sur **Ouvrir la calculatrice**.
+Vous pouvez évaluer rapidement la tarification de votre application en utilisant les calculatrices de coût fournies par
+{{site.data.keyword.Bluemix_notm}}.
+
+1. Accédez à la page {{site.data.keyword.Bluemix_notm}} [Tarification](https://console.{DomainName}/pricing/). 
+2. Utilisez l'un des widgets **Estimez vos coûts** ou cliquez sur **Ouvrir la calculatrice** pour utiliser
+la **calculatrice de prix au centime près**.
 
 Pour utiliser la calculatrice, entrez votre utilisation mensuelle prévue pour les ressources répertoriées, par exemple le nombre d'instances ou de
 notifications push. Cliquez dans la zone **Utilisation mensuelle**
@@ -506,17 +511,19 @@ Le prix total est de 148 + 13,5 + 13,5 = 175 $.</p></dd>
 
 Une fois tous les éléments additionnés, le prix total de l'application est 384,15 $.
 
-##Détails sur l'utilisation
+##Tableau de bord de l'utilisation 
 {: #usage}
 
-En tant que propriétaire de compte, utilisateur disposant du droit *Auditeur* dans l'espace ou responsable de la facturation, vous pouvez
-vous servir de la vue Détails sur l'utilisation afin d'afficher les
+En tant que propriétaire de compte ou responsable de la facturation, vous pouvez vous servir de la vue Tableau de bord de l'utilisation afin d'afficher
+les
 frais en temps réel pour les contextes d'exécution et les services que vous utilisez par mois dans vos organisations. Vous pouvez afficher le nombre de Go/heure utilisés pour le contexte d'exécution, ainsi que la consommation des services dans toutes les
 régions, ou sélectionner une région et un espace particuliers, pour les 12 derniers mois.
 
-Pour ouvrir la vue Détails sur l'utilisation, cliquez sur l'icône **Compte et support** dans le coin supérieur droit de
-l'interface utilisateur {{site.data.keyword.Bluemix_notm}} et sélectionnez **Compte**. Dans la page qui s'affiche, cliquez sur **Détails sur l'utilisation**. Dans la vue, vous pouvez afficher un
-récapitulatif de l'utilisation des contextes d'exécution et des services pour le compte.
+Pour ouvrir la vue Tableau de bord de l'utilisation, cliquez sur l'icône **Compte et support** &gt; **Compte**
+&gt;
+*nom_de_votre_compte* &gt; **Tableau de bord de l'utilisation**. Dans la vue, vous pouvez afficher un
+récapitulatif de l'utilisation des contextes d'exécution et des services pour le compte. Les responsables de la facturation ne peuvent afficher les détails que pour les organisations pour lesquelles ils sont responsables de la
+facturation.
 
 Le propriétaire de compte est facturé pour l'utilisation totale occasionnée dans toutes les organisations à la fin de chaque cycle de
 facturation. Chaque
@@ -533,20 +540,16 @@ vous affichez l'utilisation au niveau de l'organisation, vous consultez l'utilis
 gratuite et l'utilisation facturée. L'utilisation au niveau de l'organisation correspond à l'utilisation au niveau de compte une fois la
 tranche gratuite retirée.
 
-Les responsables de la facturation ne peuvent afficher les détails que pour les organisations pour lesquelles ils sont responsables de la
-facturation.
-
 ##Notifications
 {: #notifications}
 
 En tant que responsable d'un compte de type Paiement à la carte, vous pouvez définir des notifications relatives aux dépenses en fonction du coût
-total de votre compte, pour votre contexte d'exécution et vos services et pour des services individuels, à l'exception des services tiers. Vous recevez des
+total de votre compte, pour votre contexte d'exécution et vos services et pour des services individuels, à l'exception des services de tiers. Vous recevez des
 notifications lorsque vous atteignez 80 %, 90 % et 100 % des seuils que vous avez spécifiés pour les dépenses.
 
-Pour ouvrir la vue **Notifications**, cliquez sur l'icône **Paramètres de profil** dans le coin supérieur droit de
-l'interface utilisateur {{site.data.keyword.Bluemix_notm}} et sélectionnez
-**Compte&gt;Notifications**. Sélectionnez la case à cocher située devant une
-notification pour rendre la notification effective. Vous pouvez aussi ajouter et supprimer des notifications pour des services individuels.
+Pour ouvrir la vue **Notifications**, cliquez sur l'icône **Compte et support** &gt; **Compte**
+&gt; *nom_de_votre_compte* &gt; **Notifications relatives aux dépenses**. Entrez une valeur numérique afin de définir un
+seuil pour les dépenses, en fonction duquel une notification sera déclenchée, pour chaque type de notification relative aux dépenses, si nécessaire. Vous pouvez aussi ajouter et supprimer des notifications pour des services individuels.
 
 ##Changement de plan
 {: #changing}

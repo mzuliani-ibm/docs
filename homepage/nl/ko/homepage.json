@@ -27,6 +27,9 @@
 			"img": "homepage/images/network.svg",
 			"href": "services/network.html",
 			"links": [{
+				"name": "블록체인",
+				"href": "services/blockchain/index.html"
+			}, {
 				"name": "CDN(Content Delivery Network)",
 				"href": "services/cdn/index.html"
 			}, {
@@ -52,9 +55,6 @@
 			"img": "homepage/images/data.svg",
 			"href": "services/data_analytics.html",
 			"links": [{
-				"name": "Analytics for Apache Hadoop",
-				"href": "services/AnalyticsforHadoop/index.html"
-			}, {
 				"name": "Analytics for Apache Spark",
 				"href": "services/AnalyticsforApacheSpark/index.html"
 			}, {
@@ -242,7 +242,7 @@
 		}, {
 			"title": "모바일",
 			"img": "homepage/images/mobile.svg",
-			"href": "services/index.html",
+			"href": "services/mobile.html",
 			"links": [{
 				"name": "Bluemix 모바일 서비스 시도",
 				"href": "mobile/index.html"
@@ -270,7 +270,7 @@
 			"img": "homepage/images/iot.svg",
 			"href": "services/internetofthings.html",
 			"links": [{
-				"name": "Internet of Things Foundation",
+				"name": "Internet of Things 플랫폼",
 				"href": "services/IoT/index.html"
 			}, {
 				"name": "IoT Real-Time Insights",
@@ -281,6 +281,9 @@
 			"img": "homepage/images/private-apis.svg",
 			"href": "services/apis.html",
 			"links": [{
+				"name": "API Connect",
+				"href": "services/apiconnect/index.html"
+			}, {
 				"name": "API Management",
 				"href": "services/APIManagement/index.html"
 			}, {
@@ -290,7 +293,7 @@
 		}]
 		
 	}, {
-		"id": "자원",
+		"id": "Resources",
 		"descriptionTitle": "자원",
 		"items": [{
 			"title": "Bluemix를 사용해야 하는 이유",

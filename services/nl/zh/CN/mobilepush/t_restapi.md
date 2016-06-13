@@ -20,7 +20,7 @@ copyright:
 
 要获取 REST API 的基本 URL，请执行以下操作：
 
-1. 在 Bluemix®“目录”的“样板”部分中创建后端应用程序，这会自动将该 Push 服务绑定到此应用程序。如果已创建后端应用程序，请务必将该应用程序绑定到 Push Notification Service。
+1. 在 Bluemix®“目录”的“样板”部分中创建后端应用程序，这会自动将该 Push 服务绑定到此应用程序。如果已创建后端应用程序，请务必将该应用程序绑定到 Push Notification Service。 
 
 1. 在 Bluemix“仪表板”的主页中，转至**应用程序**区域，然后单击您的应用程序。
 
@@ -62,7 +62,7 @@ copyright:
    }
  ]
 }
-```
+``` 
 
 ##Push REST API 过滤器
 {: #push-api-rest-filters}

@@ -1,7 +1,7 @@
 ---
 
-Copyright :
-  Années : 2015, 2016
+copyright:
+ years: 2015, 2016
 
 ---
 
@@ -14,13 +14,13 @@ Copyright :
 
 {: #gettingstartedtemplate}
 
-Le service {{site.data.keyword.mobilepushfull}} mesure l'état, le comportement et le contexte de vos applis, utilisateurs et périphériques mobiles en offrant des services de surveillance pour les applications mobiles qui accèdent aux ressources de cloud hébergées sur {{site.data.keyword.Bluemix_notm}}. Les journaux et données d'utilisation côté client sont rassemblés automatiquement et envoyés au service Mobile Analytics sur simple demande. Les développeurs et les administrateurs peuvent utiliser le tableau de bord du service {{site.data.keyword.mobileanalytics_short}} pour afficher les données qui sont collectées par le logiciel SDK du client.
+
 {:shortdesc}
 
 Le service Push Notifications met à disposition une plateforme unifiée pour l'envoi et la gestion de
 notifications push mobiles ciblées pour les plateformes iOS et Android. Il gère le mappage des utilisateurs de votre application aux périphériques et à
 la plateforme de périphérique, ainsi que la répartition des notifications push sur ces périphériques. Avec ce service, vous pouvez envoyer des
-notifications push de diffusion, des notifications push unicast (en fonction de l'ID de périphérique), mais également des notifications push basées sur les balises (ou les rubriques) aux utilisateurs de vos applications mobiles. Vous pouvez également utiliser un logiciel SDK et des [API REST](https://mobile.{DomainName}/imfpushrestapidocs/) pour développer davantage vos applications client. 
+notifications push de diffusion, des notifications push unicast (en fonction de l'ID de périphérique), mais également des notifications push basées sur les balises (ou les rubriques) aux utilisateurs de vos applications mobiles. Vous pouvez également utiliser un logiciel SDK et des [API REST](https://mobile.{DomainName}/imfpushrestapidocs/) pour développer davantage vos applications client.
 
 Cette section explique comment configurer des notifications push de base. Lorsque vous utilisez une notification de base, les
 notifications sont diffusées au lieu d'être envoyées à un ensemble spécifique d'utilisateurs abonnés à des balises.
@@ -34,7 +34,7 @@ notifications sont diffusées au lieu d'être envoyées à un ensemble spécifiq
 
 * [Présentation](c_overview_push.md){: new_window}
 
-## Tutoriels et exemples{:id="samples"}
+## Tutoriels et exemples {:id="samples"}
 {: #samples}
 * [Modèle d'application Android helloPush](https://github.com/ibm-bluemix-mobile-services/bms-samples-android-hellopush/){: new_window}
 - [Modèle d'application Cordova](https://github.com/ibm-bluemix-mobile-services/bms-samples-cordova-hellopush){: new_window}

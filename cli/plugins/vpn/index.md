@@ -6,7 +6,13 @@ copyright:
 
 ---
 
+{:new_window: target="_blank"}
+{:shortdesc: .shortdesc}
+
+
 # IBM VPN CLI
+*Last updated: 30 May 2016*
+
 You can use the command line interface (CLI) to configure and manage your IBM® Virtual Private Network (VPN) service. The IBM VPN CLI is a plug-in that is used with the Cloud Foundry CLI plug-in. The plug-in is available for Windows, MAC, and Linux operating systems. Ensure that you use the one that is applicable to you.
 
 Before you begin, install the Cloud Foundry CLI. See [Cloud Foundry command line interface](https://console.{DomainName}/docs/cli/downloads.html) for details. 
@@ -52,22 +58,8 @@ cf uninstall-plugin vpn
 	```  
 2. Run the following command:  
 
-	**For MS Windows OS:**
-
 	```
-	cf install-plugin vpn_windows64.exe -r bluemix
-	```
-
-	**For Apple MAC OS:**
-
-	```
-	cf install-plugin vpn_mac_os_amd64 -r bluemix
-	```
-
-	**For Linux OS:**
-
-	```
-	cf install-plugin vpn_linuxamd64 -r bluemix
+	cf install-plugin vpn -r bluemix
 	```
 ##List of IBM VPN Service Commands
 
@@ -125,7 +117,7 @@ Remote endpoint IP address of the VPN tunnel.
 Creates an IKE policy.
 
 ```
-cf vpn-create ike <policy name> -g <gateway name> -d <description> -pfs <group> -e <encryption algorithm> -lv <lifetime value>
+cf vpn-create ike <policy name> -g <gateway name> -d <description> -pfs <group> -e <encryption algorithm> -lv <lifetime value> -auth <authorization algorithm>
 ```
 #### Parameters
 {: #p2}
@@ -147,13 +139,15 @@ Name of the gateway.
 
 **-lv:** Lifetime value of the IKE security association. Range: 60 - 86400 seconds. Default value: 86400 seconds
 
+**-auth:** Authorization algorithm. Values: sha1 or sha256
+
 
 ### cf vpn-create ipsec
 
 Creates an IPSec policy.
 
 ```
-cf vpn-create ipsec <policy name> -g <gateway name> -d <description> -pfs <group> -e <encryption algorithm> -lv <lifetime value>
+cf vpn-create ipsec <policy name> -g <gateway name> -d <description> -pfs <group> -e <encryption algorithm> -lv <lifetime value> -auth <authorization algorithm>
 ```
 #### Parameters
 {: #p3}
@@ -174,6 +168,8 @@ Name of the gateway.
 **-e:** Encryption algorithm. Values: aes-128; aes-192; aes-256; 3des. Default value: aes-128
 
 **-lv:** Lifetime value of the security association. Range: 60 - 86400 seconds. Default value: 3600 seconds
+
+**-auth:** Authorization algorithm. Values: sha1 or sha256
 
 ### cf vpn-create gateway
 
@@ -331,7 +327,7 @@ Preshared key.
 Updates an IKE policy.
 
 ```
-cf vpn-update ike <policy name> -g <gateway name> -d <description> -pfs <group> -e <encryption algorithm> -lv <lifetime value>
+cf vpn-update ike <policy name> -g <gateway name> -d <description> -pfs <group> -e <encryption algorithm> -lv <lifetime value> -auth <authorization algorithm>
 ```
 #### Parameters
 {: #p6}
@@ -352,13 +348,15 @@ Name of the IKE policy.
 
 **-lv:** Lifetime value of the IKE security association. Range: 60 - 86400 seconds. Default value: 86400 seconds
 
+**-auth:** Authorization algorithm. Values: sha1 or sha256
+
 
 ### cf vpn-update ipsec
 
 Updates an IPSec policy.
 
 ```
-cf vpn-update ipsec <policy name> -g <gateway name> -d <description> -pfs <group> -e <encryption algorithm> -lv <lifetime value>
+cf vpn-update ipsec <policy name> -g <gateway name> -d <description> -pfs <group> -e <encryption algorithm> -lv <lifetime value> -auth <authorization algorithm>
 ```
 #### Parameters
 {: #p7}
@@ -380,6 +378,8 @@ Name of the gateway.
 **-e:** Encryption algorithm. Values: aes-128; aes-192; aes-256; 3des. Default value: aes-128
 
 **-lv:** Lifetime value of the security association. Range: 60 - 86400 seconds. Default value: 3600 seconds
+
+**-auth:** Authorization algorithm. Values: sha1 or sha256
 
 ### cf vpn-update gateway
 
@@ -406,6 +406,7 @@ IP address of the gateway.
 Subnet address in CIDR format. 
 
 # rellinks
-## general
+## general  
+{: #general}  
 * [IBM VPN service](../../../services/vpn/index.html)
 * [Cloud Foundry CLI](https://console.{DomainName}/docs/cli/downloads.html){: new_window}

@@ -14,7 +14,7 @@ copyright:
 #Monitoramento e criação de log
 {: #monitoringandlogging}
 
-*Última atualização: 27 de janeiro de 2016*
+*Última atualização: 11 de maio de 2016*
 
 Ao monitorar seus apps e revisar logs, é possível seguir a execução do aplicativo e o fluxo de dados para obter um melhor entendimento de sua implementação. Além disso, é possível reduzir o tempo e o esforço necessários para localizar problemas e repará-los.
 {:shortdesc}
@@ -192,7 +192,7 @@ tarefa de preparação. É possível usar esse log para solucionar problemas de 
 </li></ul>
 
 
-**Nota:** para obter informações sobre como ativar a criação de log do aplicativo, consulte [Depurando erros de tempo de execução](../troubleshoot/debugging.html#debug_runtime).
+**Nota:** para obter informações sobre como ativar a criação de log do aplicativo, consulte [Depurando erros de tempo de execução](../debug/index.html#debugging-runtime-errors).
 
 
 
@@ -231,7 +231,7 @@ Para mover logs de seu app e do sistema para um host de log externo, conclua as 
 
   2. Crie uma instância de serviço fornecida pelo usuário.
      
-	 Use o comando `'cf create-user-provided-service'` (ou `'cups'`, uma versão curta do comando) para criar uma instância de serviço fornecida pelo usuário:
+	 Use o comando `'cf create-user-provided-service'` (ou `'cups'`, uma versão curta do comando) para criar uma instância de serviço fornecida pelo usuário: 
 	 ```
 	 cf create-user-provided-service <service_name> -l <logging_endpoint>
 	 ```
@@ -284,14 +284,14 @@ Para mover logs de seu app e do sistema para um host de log externo, conclua as 
 	 
 	 O nome da instância de serviço fornecida pelo usuário.
 	 
-  4. Remonte o app.
+  4. Remonte o app. 
      Digite `'cf restage appname'` para que as mudanças entrem em vigor. 
 
 #### Visualizando logs de hosts externos
 {: #viewing_logs_external}
 
 	 
-Quando os logs forem gerados, após um breve atraso, será possível visualizar mensagens em seu host do log externo semelhantes às mensagens visualizadas a partir da interface com o usuário do {{site.data.keyword.Bluemix_notm}} ou a partir da interface da linha de comandos cf. Se você tiver várias instâncias de seu app, os logs serão agregados e será possível ver todos os logs de seu app. Além disso, os logs são persistidos entre travamentos e implementações de apps.
+Quando os logs forem gerados, após um breve atraso, será possível visualizar mensagens em seu host do log externo semelhantes às mensagens visualizadas a partir da interface com o usuário do {{site.data.keyword.Bluemix_notm}} ou a partir da interface da linha de comandos cf.  Se você tiver várias instâncias de seu app, os logs serão agregados e será possível ver todos os logs de seu app. Além disso, os logs são persistidos entre travamentos e implementações de apps.
 
 **Nota:** os logs visualizados na interface de linha de comandos não estão no formato syslog e podem não corresponder exatamente às mensagens exibidas em seu host do log externo. 
 

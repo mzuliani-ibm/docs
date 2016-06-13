@@ -4,7 +4,7 @@
 
 copyright:
 
-  years: 2014, 2015, 2016 
+  years: 2014, 2016
 
  
 
@@ -15,7 +15,7 @@ copyright:
 
 # Sicurezza {{site.data.keyword.Bluemix_notm}}
 {: #security}
-*Ultimo aggiornamento: 17 marzo 2016*
+*Ultimo aggiornamento: 9 maggio 2016*
 
 Sviluppata con procedure di progettazione sicura, la piattaforma {{site.data.keyword.Bluemix}} offre diversi livelli di controlli di sicurezza tra
 la rete e l'infrastruttura. {{site.data.keyword.Bluemix_notm}} fornisce un gruppo di servizi di sicurezza che possono essere utilizzati dagli sviluppatori di applicazioni per proteggere le proprie applicazioni mobili e Web. Questi elementi si combinano per rendere {{site.data.keyword.Bluemix_notm}} una piattaforma con scelte chiare
@@ -250,24 +250,6 @@ Il plug-in IBM Application Security Testing for {{site.data.keyword.Bluemix_notm
 
 Per ulteriori informazioni, vai a [IBM Application Security Testing for Bluemix](https://developer.ibm.com/urbancode/plugindoc/ibmucd/ibm-application-security-testing-bluemix/1-0/){: new_window}.
 
-### SQL Database
-
-Il servizio SQL Database aggiunge alla tua applicazione un database relazionale con provisioning completo. Questo servizio utilizza LDAP IBM Directory Server per l'autenticazione
-e IBM InfoSphere® Guardium® Data Activity Monitor per proteggere il database a cui accedono le applicazioni. La connessione tra le applicazioni e il database è protetta dal certificato SSL firmato da DigiCert.
-
-In alcuni piani disponibili con questo servizio, puoi
-utilizzare la console del database SQL in {{site.data.keyword.Bluemix_notm}} per
-ottenere i report che contengono le seguenti informazioni:
-
- * I dati sensibili che possono essere presenti nel database a cui accedono le applicazioni.
- * Gli utenti dell'applicazione che hanno eseguito un accesso al database in uno specifico periodo.
- * Gli utenti dell'applicazione che stanno accedendo a dati sensibili presenti nel database.
-
-Per mascherare i dati utilizzando SQL, le applicazioni possono richiamare le UDF (user-defined function) di mascheramento distribuite insieme al database. Puoi ad esempio mascherare i dati che intendi utilizzare altrove per
-attività di test. Le UDF implementano gli algoritmi di mascheramento dei dati da IBM Infosphere Optim™.
-
-Il piano Premium per questo servizio include anche la crittografia dei dati. Per ulteriori informazioni su questo servizio, vedi [Introduzione a SQL Database](../services/SQLDB/index.html).
-
 ### dashDB
 
 Il servizio dashDB utilizza un server LDAP integrato per l'autenticazione utente. La connessione tra le applicazioni e il database è protetta da certificati SSL. Questo servizio utilizza la capacità di crittografia nativa di DB2® per crittografare automaticamente il tuo database distribuito e i tuoi backup di database. La rotazione della chiave master è automatica e si verifica ogni 90 giorni.
@@ -293,6 +275,24 @@ e creare un gateway sicuro utilizzando l'interfaccia utente {{site.data.keyword.
 o un pacchetto API.
 
 Per ulteriori informazioni, vedi [Introduzione a Secure Gateway](../services/SecureGateway/secure_gateway.html).
+
+### SQL Database
+
+Il servizio SQL Database aggiunge alla tua applicazione un database relazionale con provisioning completo. Questo servizio utilizza LDAP IBM Directory Server per l'autenticazione
+e IBM InfoSphere® Guardium® Data Activity Monitor per proteggere il database a cui accedono le applicazioni. La connessione tra le applicazioni e il database è protetta dal certificato SSL firmato da DigiCert.
+
+In alcuni piani disponibili con questo servizio, puoi
+utilizzare la console del database SQL in {{site.data.keyword.Bluemix_notm}} per
+ottenere i report che contengono le seguenti informazioni:
+
+ * I dati sensibili che possono essere presenti nel database a cui accedono le applicazioni.
+ * Gli utenti dell'applicazione che hanno eseguito un accesso al database in uno specifico periodo.
+ * Gli utenti dell'applicazione che stanno accedendo a dati sensibili presenti nel database.
+
+Per mascherare i dati utilizzando SQL, le applicazioni possono richiamare le UDF (user-defined function) di mascheramento distribuite insieme al database. Puoi ad esempio mascherare i dati che intendi utilizzare altrove per
+attività di test. Le UDF implementano gli algoritmi di mascheramento dei dati da IBM Infosphere Optim™.
+
+Il piano Premium per questo servizio include anche la crittografia dei dati. Per ulteriori informazioni su questo servizio, vedi [Introduzione a SQL Database](../services/SQLDB/index.html).
 
 ### SIEM (Security Information and Event Management)
 
@@ -349,7 +349,7 @@ Oltre agli utenti descritti in questi percorsi, un team per le operazioni di sic
 {{site.data.keyword.Bluemix}} fornisce una piattaforma cloud sicura di cui ti puoi fidare. La conformità {{site.data.keyword.Bluemix_notm}} deriva da una piattaforma e da servizi basati sui migliori standard di sicurezza, tra cui ISO 27001 e ISO 27002.
 {:shortdesc}
 
-![Clausola del modello di protezione dati UE](images/icon_eumc.png)  una **Clausola del modello dell'Unione Europea (UE)** è un accordo studiato per proteggere i dati personali che vengono trasferiti dall'Unione Europea (UE) o dallo Spazio economico europeo (SEE) verso un terzo paese. La Clausola del modello UE viene firmato tra il client ubicato nell'UE o SEE come esportatore di dati e il processore di dati IBM ubicato nel paese terzo come importatore dei dati. La [Clausola del modello UE IBM SaaS](http://www-01.ibm.com/common/ssi/cgi-bin/ssialias?subtype=ST&infotype=SA&htmlfid=KUJ12408USEN&attachment=KUJ12408USEN.PDF){: new_window} contiene i diritti e gli obblighi dell'esportatore e dell'importatore dei dati nonché i diritti dei soggetti interessati. La Clausola del modello UE IBM SaaS garantisce che i dati personali, quando elaborati in un paese terzo, siano posti sotto una protezione analoga a quella disponibile all'interno dell'UE o SEE.
+![Clausola del modello di protezione dati UE](images/icon_eumc.png)  una **Clausola del modello dell'Unione Europea (UE)** è un accordo studiato per proteggere i dati personali che vengono trasferiti dall'Unione Europea (UE) o dallo Spazio economico europeo (SEE) verso un terzo paese. La Clausola del modello UE viene firmato tra il client ubicato nell'UE o SEE come esportatore di dati e il processore di dati IBM ubicato nel paese terzo come importatore dei dati. La [IBM SaaS EU Model Clause](http://www-01.ibm.com/common/ssi/cgi-bin/ssialias?subtype=ST&infotype=SA&htmlfid=KUJ12408USEN&attachment=KUJ12408USEN.PDF){: new_window} contiene i diritti e gli obblighi dell'esportatore e dell'importatore dei dati nonché i diritti dei soggetti interessati. La Clausola del modello UE IBM SaaS garantisce che i dati personali, quando elaborati in un paese terzo, siano posti sotto una protezione analoga a quella disponibile all'interno dell'UE o SEE.
 
 ![Financial Industry Information Systems](images/FISC.gif)  Per le istituzioni bancarie e finanziarie correlate in Giappone, i sistemi informatici devono disporre di procedure di sicurezza in vigore basate sulle linee guida di sicurezza FICS (Center for Financial Industry Information Systems). Le linee guida di sicurezza **FISC** vengono fatte rispettare dal Japan Financial Services Agency (FSA), Bank of Japan (BOJ) e FISC.
 
@@ -388,7 +388,11 @@ La seguente tabella mostra quali servizi {{site.data.keyword.Bluemix_notm}} sono
 *Tabella 1. Conformità di servizi e piattaforme*
 
 
-# rellinks
-## general
+# Link correlati
+{: #rellinks}
+
+## Link correlati
+{: #general}
+
 * [Conformità di sicurezza SoftLayer](http://www.softlayer.com/security)
 * [Introduzione a Single Sign On](../services/SingleSignOn/index.html)

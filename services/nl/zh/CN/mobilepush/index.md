@@ -14,8 +14,7 @@ copyright:
 
 {: #gettingstartedtemplate}
 
-{{site.data.keyword.mobilepushfull}} 服务通过为访问 {{site.data.keyword.Bluemix_notm}} 上托管的云资源的移动应用程序提供监视服务，度量移动应用程序、
-移动用户和移动设备的状态、行为和上下文。客户机端日志和使用情况数据会自动收集，并根据需要发送到 Mobile Analytics 服务。开发者和管理员可以使用 {{site.data.keyword.mobileanalytics_short}} 服务仪表板来查看客户机 SDK 收集的数据。
+
 {:shortdesc}
 
 Push Notification Service 提供一个统一平台来发送和管理针对 iOS 和 Android 平台的移动推送通知。此服务可管理应用程序用户到设备的映射、管理设备平台以及处理向用户分派推送通知。使用此服务，您可以向移动应用程序用户发送广播、单点广播（基于 deviceID），以及基于标记（或基于主题）的推送通知。还可以使用 SDK 和 [REST API](https://mobile.{DomainName}/imfpushrestapidocs/) 来进一步开发您的客户机应用程序。
@@ -31,7 +30,7 @@ Push Notification Service 提供一个统一平台来发送和管理针对 iOS �
 
 * [概述](c_overview_push.md){: new_window}
 
-## 教程和样本{:id="samples"}
+## 教程和样本 {:id="samples"}
 {: #samples}
 * [Android helloPush 样本应用程序](https://github.com/ibm-bluemix-mobile-services/bms-samples-android-hellopush/){: new_window}
 - [Cordova 样本应用程序](https://github.com/ibm-bluemix-mobile-services/bms-samples-cordova-hellopush){: new_window}

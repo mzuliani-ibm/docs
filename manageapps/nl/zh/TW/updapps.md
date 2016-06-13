@@ -14,7 +14,7 @@ copyright:
 #更新應用程式
 {: #updatingapps}
 
-*前次更新：2016 年 3 月 17 日*
+*前次更新：2016 年 5 月 9 日*
 
 
 您可以使用 cf push 指令或 {{site.data.keyword.Bluemix}} DevOps Services，來更新 {{site.data.keyword.Bluemix_notm}} 中的應用程式。在許多情況下，即使是內建建置套件（例如 Node.js），您還是必須提供 -c 參數來指定用來啟動應用程式的指令。
@@ -105,12 +105,12 @@ cf delete-route domain -n hostname -f
 ##藍綠部署
 {: #blue_green}
 
-{{site.data.keyword.Bluemix_notm}} 支援使用藍綠部署技術來啟用持續交付及最少關閉時間事件。
+{{site.data.keyword.Bluemix_notm}} 支援使用藍綠部署技術來啟用持續交付並使中斷時間事件減到最少。
 
-*藍綠部署* 是一種零關閉時間部署技術，由兩個幾乎相同的正式作業環境（稱為 Blue 及 Green）組成。它們的差別在於開發人員有意變更的構件，通常是應用程式版本。在任何給定時間，至少會有一個環境是作用中。使用藍綠部署技術，可以有下列好處：
+*藍綠部署* 是一種零中斷時間的部署技術，由兩個幾乎相同的正式作業環境（稱為 Blue 及 Green）組成。它們的差別在於開發人員有意變更的構件，通常是應用程式的版本。在任何給定時間，至少會有一個環境是作用中。使用藍綠部署技術，可以有下列好處：
 
-* 將軟體快速地從測試的最終階段帶到實際正式作業。
-* 部署新版本的應用程式，而無需中斷應用程式的資料流量。
+* 快速地讓軟體從測試的最終階段進入實際正式作業。
+* 部署新版本的應用程式時不會中斷應用程式的資料流量。
 * 快速回復。如果其中一個環境有問題，您可以快速切換至其他環境。
 
 如果已經將應用程式部署至 {{site.data.keyword.Bluemix_notm}}，且想要將應用程式更新成新版本，您可以使用下列兩種方法其中之一來確保藍綠部署。
@@ -144,7 +144,7 @@ cf delete-route domain -n hostname -f
   
   **結果：** *Green* 應用程式執行中，且正在回應 URL `Blue.mybluemix.net`。
 
-3. 進行必要變更，並備妥更新的 *Blue* 版本。將更新的 *Blue* 應用程式推送至 {{site.data.keyword.Bluemix_notm}}：
+3. 進行必要變更，並備妥已更新的 *Blue* 版本。將已更新的 *Blue* 應用程式推送至 {{site.data.keyword.Bluemix_notm}}：
   
   ```
   cf push Blue
@@ -280,6 +280,10 @@ cf delete-route domain -n hostname -f
 
 
 # 相關鏈結
-## 一般 
+{: #rellinks}
+
+## 相關鏈結
+{: #general}
+
 * [藍綠部署](http://martinfowler.com/bliki/BlueGreenDeployment.html){:new_window}
 * [IBM {{site.data.keyword.Bluemix_notm}} DevOps Services](https://hub.jazz.net/){:new_window}

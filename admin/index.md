@@ -17,9 +17,9 @@ copyright:
 
 # Managing {{site.data.keyword.Bluemix_notm}} Local and {{site.data.keyword.Bluemix_notm}} Dedicated
 {: #mng}
-*Last updated: 2 May 2016*
+*Last updated: 13 June 2016*
 
-If you have administrator access for {{site.data.keyword.Bluemix_notm}} Local or {{site.data.keyword.Bluemix_notm}} Dedicated, go to the **Administration** page to manage resources, monitor quota usage, administer user permissions, schedule upgrade notifications, view security reports and logs, and more. You can manage your orgs by creating spaces and setting [user roles and permissions](index.html#oc_useradmin); see [Managing your organizations](../admin/adminpublic.html#orgmng).
+If you have administrator access for {{site.data.keyword.Bluemix_notm}} Local or {{site.data.keyword.Bluemix_notm}} Dedicated, go to the **Administration** page to manage resources, monitor quota usage, administer user permissions, schedule upgrade notifications, view security reports and logs, and more. You can manage your orgs by creating spaces and setting [user roles and permissions](index.html#oc_useradmin); see [Managing your organizations](../admin/orgs_spaces.html).
 {:shortdesc}
 
 *Table 1. Administrative tasks for managing your {{site.data.keyword.Bluemix_notm}} local or dedicated instance*
@@ -29,7 +29,7 @@ If you have administrator access for {{site.data.keyword.Bluemix_notm}} Local or
 |Monitor system usage | Click **ADMINISTRATION &gt; USAGE**. View your system information, monitor CPU usage, and plan usage to make the best decisions for your business. See [Viewing usage information](index.html#oc_resource).|
 |Manage your catalog | Click **ADMINISTRATION &gt; CATALOG MANAGEMENT** to manage which services are visible to your users and orgs. See [Managing your catalog](index.html#oc_catalog).|
 |Administer orgs | Click **ADMINISTRATION &gt; ORGANIZATION ADMINISTRATION** to create organizations, monitor quotas for organizations, and make needs-based decisions quickly. See [Administering organizations](index.html#oc_organizations).|
-|Create spaces and assign user roles | Click the **Account and Support** icon ![Account and Support](../support/images/account_support.svg), then select **Manage Organizations** to create spaces within your orgs. Add users and assign org and space roles to users. See [Managing your organizations](../admin/adminpublic.html#orgmng). |
+|Create spaces and assign user roles | Click the **Account and Support** icon ![Account and Support](../support/images/account_support.svg), then select **Manage Organizations** to create spaces within your orgs. Add users and assign org and space roles to users. See [Managing your organizations](../admin/orgs_spaces.html). |
 |Manage administrative user permissions | Click **ADMINISTRATION &gt; USER ADMINISTRATION** to add users, remove users, and adjust user permissions. See [Managing users and permissions](index.html#oc_useradmin). |
 |Review reports and logs | Click **ADMINISTRATION &gt; REPORTS AND LOGS** to view security reports and audit logs for you instance. See [Viewing reports](index.html#oc_report). |
 |View system information | Click **ADMINISTRATION &gt; SYSTEM INFORMATION** to view system information such as pending updates, name and version of your instance, region, API URL, CLI URL, LDAP configuration details, group and user mappings, statistics, and shared domains. You can also access the calendar feed and event subscriptions for extending your notifications in the Pending Updates section. See [Viewing system information](index.html#oc_system). |
@@ -39,106 +39,177 @@ If you have administrator access for {{site.data.keyword.Bluemix_notm}} Local or
 ## Notifications and event subscriptions
 {: #oc_eventsubscription}
 
-You can always know the status of your environment by checking the Status page. {{site.data.keyword.Bluemix_notm}} also sends notifications to the Notifications area for the Administration page for events such as scheduled maintenance and upgrades. Incidents are reported on the Status page.
+You can always know the status of your environment by checking the Status page. As they occur, incidents are reported on the Status page. {{site.data.keyword.Bluemix_notm}} also sends notifications to the Notifications area on the Administration page for events such as scheduled or pending maintenance updates.
 
 ### Notifications
 
-You can view notifications from IBM for your local or dedicated environment and monitor the status of your environment. Review the following table for information about the different types of notifications and where the notifications are posted.
+You can view notifications for your local or dedicated environment to monitor the status of your environment. Review the following table for information about the different types of notifications and where each notification type is posted.
 
 *Table 2. Event types and notifications methods*
 
 | **Event Type** | **Notification method** |       
 |-----------------|-------------------|
-| Maintenance updates | You are alerted about upcoming maintenance updates in the Notifications for the Administration page. Go to the **Administration** page, then select the **Notifications** icon ![Notifications](images/icon_announcement.svg). To see a full list and history of your pending and complete notifications, click **ADMINISTRATION &gt; SYSTEM INFORMATION** &gt; *Number* **updates pending**. You can extend the notification capability by setting up an event subscription that integrates the maintenance update alerts from the Administration page with a web service of your choice to route the messages to a help desk email address or an SMS message to a phone number of your choice. |
-| Critical incidents | You are alerted about critical incidents on the Status page. Click the **Account and Support** icon ![Account and Support](../support/images/account_support.svg), and then select **Status**. You can extend the notification capability by setting up an event subscription that integrates the incident alerts from the Status page with a web service of your choice to route the messages to a help desk email address or an SMS message to a phone number of your choice. |  
-| Status | You can view the latest status for the platform, services, and your {{site.data.keyword.Bluemix_notm}} instance. Click the **Account and Support** icon ![Account and Support](../support/images/account_support.svg), and then select **Status**.  |
+| Maintenance updates | You are alerted about upcoming maintenance updates in the Notifications area on the Administration page. Go to the **Administration** page, then select the **Notifications** icon ![Notifications](images/icon_announcement.svg). To see a full list and history of your pending and complete notifications, click **ADMINISTRATION &gt; SYSTEM INFORMATION** &gt; *Number* **pending**. You can extend the notification capability by setting up a subscription that sends an email to recipients of your choice. Or you can set up a subscription that uses webhooks to integrate the notifications from the Administration page with a web service of your choice. |
+| Critical incidents | You are alerted about critical incidents on the Status page. Click the **Account and Support** icon ![Account and Support](../support/images/account_support.svg), and then select **Status**. You can extend the notification capability by setting up an event subscription that sends an email to a recipient of your choice. Or you can set up a subscription that uses webhooks to integrate the notifications from the Administration page with a web service of your choice.  |  
+| {{site.data.keyword.Bluemix_notm}} Status | You can always view the latest status for the platform, services, and your {{site.data.keyword.Bluemix_notm}} instance on the Status page. Click the **Account and Support** icon ![Account and Support](../support/images/account_support.svg), and then select **Status**.  |
 
 ### Setting up event subscriptions
 
-You can extend the functionality of the notifications that are sent to the Administration page and Status page by using event subscriptions that implement web hooks. Web hooks route your notifications directly to a destination of your choice, such as a help desk email address (by email) or a phone number (by SMS message). You can customize the type of notification, specifically maintenance updates or critical incident alerts, and the information that is included in the notification.
+You can extend the functionality of the notifications that are sent to the Administration page and the Status page by using event subscriptions to set up a custom email or use webhooks to integrate with a tool of your choice. If you select the webhooks option, your notifications are routed directly to a destination of your choice, such as a phone number (by SMS message). You can customize the type of notification, specifically maintenance updates or critical incident alerts, and the information that is included in the body of each notification.
 
-To use web hooks to set up a specific event subscription, complete the following steps:
+**Note**: Only users with the Admin permission (`ops.admin`) can set up event subscriptions.
 
-* For maintenance update notifications, go to **SYSTEM INFORMATION** &gt; *Number* **updates pending**, and then click the **Subscribe** icon ![Subscribe](images/icon_subscribe.svg).
-* For incident alert notifications, click the **Account and Support** icon ![Account and Support](../support/images/account_support.svg) &gt; **Status**, and then click the **Subscribe** icon ![Subscribe](images/icon_subscribe.svg).
+To access the **Event Subscriptions** page, complete the following steps:
+
+* For maintenance update notifications, go to **SYSTEM INFORMATION &gt; *Number* pending &gt; Subscriptions**.
+* For incident notifications, click the **Account and Support** icon ![Account and Support](../support/images/account_support.svg) &gt; **Status**, and then click the **Subscribe** icon ![Subscribe](images/icon_subscribe.svg).
 
 **Note**: You can access the event subscription page for both types of notifications by using either of the two methods described.
 
+To create an email or webhook subscription from the **Event Subscriptions** page, complete the following steps:
+
 1. Click **Add Subscription**.
+2. Fill in the event subscription form. For information about the fields on the form and the values to use in the payload section and the message body of the email template, review the following tables.
+3. After you complete the form, you can choose from the following options:
 
-2. Fill in the event subscription form. For information about the fields on the form and the values to use in the payload section, review the following tables:
+  * Click **Save** to save the subscription to your event subscription list. 
+  * Click **Save and Test** to save and test the notification. 
+  * Click **Save and Close** to save the subscription to your event subscription list, and return to the previous page.
 
-*Table 3. Event subscription form fields*
+*Table 3. Event subscription form fields for an email subscription*
 
 | **Field** | **Description** |
 |-----------------|-------------------|
-| Type | Select Web hook. |
-| Method | Select GET or POST. |
-| Event | Select to be subscribed to notifications for updates or incidents. |
-| URL | Enter the URL to hook to your web service. |
-| Description | Add a description for the event subscription that you are creating. |
+| Type | Select **Email**. |
+| Event | Select to be subscribed to notifications for an Update or Incident. |
+| Enabled | Select the option to enable the email notifications. Clear the selection to disable the email notification. Subscriptions are enabled by default. |
+| Subject | Enter the subject line for the email. This is a required field.  |
+| Body | Enter the message body text to be sent in the email. You can use the IBM payload values to populate the email notification with pertinent information. See the [Payload section values](index.html#payload) table to identify which values you can use. Use basic HTML tags to structure your email. If you do not enter information in this section, you receive a notification that does not have any additional information. This is a required field. |
+| To | Enter the email address or addresses using a comma-separated list for the recipients of the email notification. Expand the "cc" or "bcc" options to copy others on the email. This is a required field. |
+| Description | Add a unique description for the subscription that you are creating. |
+
+
+*Table 4. Event subscription form fields for a webhook subscription*
+
+| **Field** | **Description** |
+|-----------------|-------------------|
+| Type | Select **Webhook** |
+| Method | Select **GET** or **POST**. |
+| Event | Select to be subscribed to notifications for an Update or Incident. |
+| URL | Enter the URL to connect to your web service. |
+| Description | Add a unique description for the subscription that you are creating. |
 | User name | Enter your user name for your web service. If you don't want to use your personal credentials, you can set up a functional ID to use specifically with {{site.data.keyword.Bluemix_notm}}. |
 | Password | Enter the password for your web service. |
-| Payload | If you selected the POST method, enter the properties that are specific to the web service that you are using paired with the values used for the IBM notification. See the following table for the IBM values that you can use to populate your notification. If you do not enter information in this section, you receive a notification that does not have any additional information. |
+| Payload | If you selected the POST method, enter the properties that are specific to the web service that you are using paired with the pyaload values used for the IBM notification. See the [Payload section values](index.html#payload) table to identify which values you can use. If you do not enter information in this section, you receive a notification that does not have any additional information. |
 
-*Table 4. Payload section values*
+*Table 5. Payload section values*
+{: #payload}
 
 | **IBM value** | **Description** | **Event type** |
 |----------------|----------------|------------------------|
 | {{content.title}} | Message title |  Update and incident  |
-| {{status}} | Status of the update or incident. | Update and incident |
 | {{type}} | Update or incident | Update and incident | 
 | {{region}} | Affected region | Update and incident |
 | {{content.message}} | Message description |   Update and incident  |
 | {{content.severity}} | Severity rating | Incident |
 | {{content.category}} | Affected services | Incident |
 | {{content.subCategoryName}} | Affected components | Incident |
-| {{content.scheduleWindow}} | The scheduled date for the update | Update |
+| {{status}} | Status of the update | Update |
+| {{content.scheduleWindow.start}} | The scheduled start date for the update | Update |
+| {{content.scheduleWindow.end}} | The scheduled end time for the update | Update |
 | {{content.disruption}} | Affected components | Update |
 
-When your event subscription is saved, you receive notifications through the method that you set up through your web service. Notifications still post on the Status page for incidents and in the Notifications area of the Administration page for maintenance updates.
+When your event subscription is saved, you receive notifications through the method that you set up. Notifications still post on the Status page for incidents and in the Notifications area of the Administration page for maintenance updates.
 
-You can select any saved event subscription, and view the recent activity. You can click to expand any recent activity entry to view the details. Included in the details are the IBM values for the notification that you can use in the payload section. To see these values, expand the recent activity entry, expand **Event**, and then expand **Object**.
+You can select any saved event subscription, view the recent activity, or edit as you need. Click to expand any recent activity entry to view the history details.
+
+## Maintenance updates
+{: #oc_schedulemaintenance}
+
+You can view scheduled and pending maintenance updates by going to **ADMINISTRATION &gt; SYSTEM INFORMATION &gt; *Number* pending** to access the **System Updates** page. 
+
+**Note**: See the following section for [Setting preapproved maintenance windows](index.html#preapprovedmaintenance) to get you started. These windows must be set in order for IBM to schedule maintenance for your environment.
+
+<dl>
+<dt>Non-disruptive updates</dt>
+<dd>A non-disruptive update does not affect your environment, your running applications, or your users' access to your applications. This update type does not require case-by-case approval and will be applied during the preapproved, available maintenance windows that you set from the System Updates page.</dd>
+<dt>Disruptive updates</dt>
+<dd>A disruptive update might affect your environment, running applications, or your users' access to your applications. You must schedule and approve each of these maintenance updates within the allotted 21-day maintenance window. You can select the suggested deployment date and time, the option for any of your preapproved windows, or you can open the calendar to select three specific dates and times for IBM to choose from when scheduling the update.</dd>
+</dl>
+
+
+### Setting preapproved maintenance windows
+{: #preapprovedmaintenance}
+
+Before you start scheduling and approving updates, you must set your preapproved maintenance windows. Non-disruptive updates are scheduled during the preapproved window times. 
+
+You are required to set a minimum of 24 available hours for a week for a minimum of three days during each week. For example, you can set three 8-hour windows across three separate days, or you can set 6-hour windows across four separate days. To ensure that the windows provide enough time for an update to be applied, each window must be a minimum of four hours in duration.
+
+**Note**: Only users with the Admin permission (`ops.admin`) can schedule and approve maintenance updates.
+
+1. Go to **ADMINISTRATION &gt; SYSTEM INFORMATION &gt; *Number* pending &gt; Manage Availability**.
+2. Expand the **Manage Available Update Windows** section.
+3. Click **Add new** ![Add new](images/add-new.png).
+4. Set your first availability window by selecting the frequency, duration, and start time for the window.
+5. Click **Submit**.
+6. Repeat this process until you have met the minimum requirements for the weekly windows.
+
+### Setting unavailable maintenance windows
+
+After you set your preapproved available maintenance windows, you can choose to set specific dates and times that your environment is not available for updates. For example, you might choose a high traffic weekend or holiday when you do not want any maintenance applied to ensure that your applications are available for your users.
+
+1. Go to **ADMINISTRATION &gt; SYSTEM INFORMATION &gt; *Number* pending &gt; Manage Availability**.
+2. Expand the **Manage Unavailable Update Windows** section.
+3. Click **Add new** ![Add new](images/add-new.png).
+4. Set your unavailable window by selecting the frequency, duration, and start time for the window.
+5. Click **Submit**.
+
+### Scheduling and approving updates
+{: #scheduleandapprove}
+
+After you set your preapproved maintenance windows, non-disruptive updates will be automatically scheduled during those times. Your explicit approval for these types of updates is not required. However, you can view the details for each maintenance update including what is being updated, how long the update will take, and when the update is scheduled. 
+
+To view the details for a non-disruptive update, complete the following steps:
+
+1. Go to **ADMINISTRATION &gt; SYSTEM INFORMATION &gt; *Number* pending**.
+2. Identify any rows that have **Customer Scheduling Required** set to **No**.
+3. Select the row for that update to view the details.
+
+A disruptive update might affect your environment, running applications, or your users' access to your applications. You must schedule and approve each of these maintenance updates within the alloted 21-day maintenance window. You can select the suggested deployment date and time, the option for any of your preapproved windows, or you can open the calendar to select three specific dates and times for IBM to choose from when scheduling the update.
+
+For disruptive updates that do require your approval, complete the following steps:
+
+1. Go to **ADMINISTRATION &gt; SYSTEM INFORMATION &gt; *Number* pending**.
+2. Identify any rows that have **Customer Scheduling Required** set to **Yes**.
+3. Select the row for that update to review the details for the update including the update description, suggested date and time for the update, the affected components, and duration for the update.
+4. Select **Schedule and Approve**.
+5. Choose from the following options: **Suggested date**, **Specific dates**, or **Any preapproved window**. If you select **Specific dates**, you can open the calendar to select three options for IBM to choose from.
+6. Select **Submit** when you are finished. 
+
+Based on your selection, the update is scheduled for deployment during the suggested date that you accepted, during one of your preapproved windows, or one of the specific dates and times that you selected. When the update is scheduled for deployment by IBM, you see the scheduled date reflected in the details for the update on the **System Updates** page.
+
 
 ## Viewing system information
 {: #oc_system}
 
 To view system information, click **ADMINISTRATION &gt; SYSTEM INFORMATION**.
 
-You can expand and view various sections about pending updates, general system information, and
+You can expand and view various sections about pending maintenance updates, general system information, and
 LDAP configuration details.
 
-### Pending updates and notifications
+### Pending system updates
 
 In the Updates section, you can see the number of pending
-update notifications that require action on your part. To take action for a specific update, complete the following steps:
+update notifications that require action on your part. There are two types of maintenance updates that you might see:
 
-<ol>
-<li>Click <strong><em>Number</em> updates pending</strong> to view all pending
-updates.</li>
-<li>Select an update to take action or view the details of the update, which include the update
-window, scheduled date, or disruption status.</li>
-<li>Click <strong>SELECT UNAVAILABLE DATES</strong> to set specific days in the update window
-that are not convenient for the update to be applied. If you set unavailable dates, IBM approves and
-schedules your update based on your selections. You receive a notification when the update is
-approved and scheduled.</li>
-<li>Click <strong>APPROVE UPDATE</strong> to approve the update, if you do not have any unavailable
-dates. If you approve, the update is applied during the scheduled update window. IBM sends a
-notification when the update deployment starts and ends.</li>
-</ol>
+<dl>
+<dt>Non-disruptive updates</dt>
+<dd>A non-disruptive update does not affect your environment, your running applications, or your users' access to your applications. This update type does not require case-by-case approval. These updates are applied in the preapproved, available maintenance windows that you set from the System Updates page.</dd>
+<dt>Disruptive updates</dt>
+<dd>A disruptive update might affect your environment, running applications, or your users' access to your applications. You have the ability to schedule and approve each of these maintenance updates within the allotted 21-day maintenance window to ensure that the update is not applied during critical business hours. You can select the suggested deployment date and time that is based on your preapproved update windows, or you can select two additional times and dates for IBM to choose from when applying the update.</dd>
+</dl>
 
-**Note**: If you do not set unavailable dates or approve the update, it is applied at the end of the 21-day window to ensure that your platform remains current and up-to-date.
-
-From the Pending Updates page, you can choose to track your update schedule by clicking the **Calendar** icon ![Calendar](images/icon_calendar.svg) and downloading the `.ics` file to import your scheduled updates into a calendar app of your choice:
-
-<ol>
-<li>Open your calendar app.</li>
-<li>Download the calendar file by clicking the **Calendar** icon ![Calendar](images/icon_calendar.svg), and then import it to your calendar app by using the `.ics` file.</li>
-<li>Enter your credentials.</li>
-<li>View your scheduled updates.</li>
-</ol>
-
-You can also extend the notification functionality for the Administration page by using event subscriptions to integrate with a web service of your choice. To set up an event notification subscription for an update or incident, see [Event subscriptions and notifications](index.html#oc_eventsubscription).
+For more information about setting preapproved maintenance windows, setting specific unavailable dates for maintenance, and setting up a calendar feed, see [Maintenance updates](index.html#oc_schedulemaintenance).
 
 ### General system information
 
@@ -154,10 +225,10 @@ In the General Information section, you can view the following information:
 In the LDAP Configuration Details section, you can select the LDAP
 server, and view information about user and group mappings. If you are using {{site.data.keyword.IBM}} WebID, it is indicated in this section.
 
-## Viewing usage information
+## Viewing usage and reports
 {: #oc_resource}
 
-You can view different types of usage information for your local or dedicated instance and {{site.data.keyword.Bluemix_notm}} account:
+You can view different types of usage information for your local or dedicated instance and {{site.data.keyword.Bluemix_notm}} account. You can also download and view security reports and logs for your {{site.data.keyword.Bluemix_notm}} instance.
 
 - Resource information including disk space, CPU usage, network usage, and average response times. See [Resource usage](index.html#resourceusage).
 - Account usage per org including number of runtime apps with usage, total number of runtime GB-hours, and the number of service instances with usage. See [Account usage](index.html#accountusage).
@@ -167,7 +238,7 @@ You can view different types of usage information for your local or dedicated in
 ### Resource usage
 {: #resourceusage}
 
-To view resource information, click **ADMINISTRATION &gt; USAGE**.
+To view resource usage information, click **ADMINISTRATION &gt; USAGE**.
 
 In the Resource Monitoring section, you can view the following
 information:
@@ -237,13 +308,10 @@ To view usage per org, click **ADMINISTRATION &gt; ORGANIZATION ADMINISTRATION**
 
 For more information about viewing usage per org, adjusting quota plans, and managing your orgs, see [Administering organizations](../admin/index.html#oc_organizations).
 
-## Viewing reports
+### Reports
 {: #oc_report}
 
-You can view security reports and logs, such as DataPower&trade;, firewall, and login audit, for
-your {{site.data.keyword.Bluemix_notm}} instance.
-
-To view reports and logs, click **ADMINISTRATION &gt; REPORTS AND LOGS**.
+You can view security reports and logs, such as DataPower&trade;, firewall, and login audit, for your {{site.data.keyword.Bluemix_notm}} instance. To view reports and logs, click **ADMINISTRATION &gt; REPORTS AND LOGS**.
 
 Select from the following options:
 
@@ -258,7 +326,7 @@ icon to download the report.
 
 The following table shows the list of security reports that are generated for {{site.data.keyword.Bluemix_notm}} Local and {{site.data.keyword.Bluemix_notm}} Dedicated.
 
-*Table 5. Security report list*
+*Table 6. Security report list*
 
 | **Category** | **Report** | **Description** |      
 |-----------------|-------------------|---------------------|
@@ -312,7 +380,13 @@ Catalog, select **DISABLE ALL PLANS**.
 - To control the visibility of an individual plan, select the plan name, and then use the
 drop-down menu to select **Enable for all organizations**, **Disable for all organizations**, or **Enable plan for specific organizations**.
 
-<!-- staging only start -->
+You can also manage the priority order of available buildpacks to be chosen based on compatibility for your developers when they are creating apps.
+
+1. Go to **ADMINISTRATION &gt; CATALOG MANAGEMENT**.
+2. Go to the **Compute** section.
+3. Select **Buildpack priority**.
+4. Select the buildpack option that you want to prioritize within the list.
+5. With the option selected, use the arrows to move the option within the list. Priority is set by listing the highest prioirty item first in the list.
 
 ### Registering a service broker
 {: #servicebrokerui}
@@ -465,6 +539,16 @@ selecting multiple names.
 4. Click <strong>CREATE ORGANIZATION</strong> to save your changes and
 create the org.
 
+### Creating spaces
+
+You can create spaces in your organization; for example, a *dev* space as a development environment, a *test* space as a testing environment, and a *production* space as a production environment. Then, you can associate your apps with spaces. Complete the following steps to create a space:
+
+1. Go to the **Account and Support** icon ![Account and Support icon](../admin/images/account_support.svg) &gt; **Manage Organizations** page.
+2. Select the org that you want to add a space to.
+3. Click **Create a Space**.
+4. Enter a space name.
+5. Click **Create**.
+
 ### Quota monitoring
 
 In the Quota Monitoring section, you can expand the section and view the following information:
@@ -554,7 +638,7 @@ Permissions for each user are displayed. Permissions can be the following: None,
 `Admin`, `Catalog`, `Login`,
 `Reports`, and `Users`. Permissions can be enabled, or the
 user can be given `view` or `write` access for that
-permission, as represented by icons. See [Permissions](#permissions) for descriptions
+permission, as represented by icons. See [Permissions](index.html#permissions) for descriptions
 of each type and explanation of the icons.
 
 ### Working with users
@@ -582,6 +666,16 @@ field.
   4. To add the user group to the selected org, click **Add Users**.
   **Note**: Groups of more than 50 users are added through a background batch job. When the add operation is successful, the user or group is added to the table for you to view and search. When users are added, they have no assigned permissions.
 
+* Add a group of users by importing a spreadsheet that includes user IDs, user email addresses, and the organization to which you plan to add the user.
+
+  1. Click **Import users**.
+  2. Click **Download Template (.CSV)** to download a spreadsheet with the required columns that you can fill in, or you can create your own by using a spreadsheet that includes the required column headers: **User ID**, **Email**, **Organization**.  There are two optional columns that are also included in the template: **First Name** and **Last Name**.
+  3. Fill in the user values for the required columns. If you are not using an LDAP directory, use the required and optional column headers for your importing users.
+  4. Save your file, and click **Upload file**.
+ 
+
+  **Note**: Enter user IDs that match the values used in your user registry. The columns within your spreadsheet can be in any order as long as you have all of the required columns. You receive a confirmation message stating that all users were added, if the import was successful. If the import was successful for some users, but not others, review the error message to take action on the users that could not be added.
+
 * Remove users. If you have `admin` permission or `users` permission with `write` access, you can remove users.
 
     1. Locate the user and click the ![Delete](images/icon_trash.svg) icon.
@@ -592,7 +686,7 @@ field.
 
 Users can be assigned the following permissions:
 
-*Table 6. Permissions*
+*Table 7. Permissions*
 
 | **User permission** | **Description** |       
 |-----------------|-------------------|
@@ -622,6 +716,7 @@ To add or remove a user from an org, select from the following options:
 
 * To add a user to an org, select the user name from the table to access the **Edit User** screen. Then, use the search field to locate an org, and select the org from the list, and then click **Save**.
 * To remove a user from an org, select the user name from the table to access the **Edit User** screen. Then, click ![Remove](images/icon_remove.svg) for the org from which you want to remove the user, and click **Save**.
+
 
 ## Managing users with the Admin REST API
 {: #usingadminapi}
@@ -983,7 +1078,7 @@ POST /codi/v1/serviceBrokers
 ### Request
 {: #registerrequest}
 
-*Table 7. Fields*
+*Table 8. Fields*
 
 | **Name** | **Description** |
 |-----------------|-------------------|
@@ -1064,7 +1159,7 @@ Use the following API and code examples to update a service.
 ### Request
 {: #updaterequest}
 
-*Table 8. Fields*
+*Table 9. Fields*
 
 | **Name** | **Description** |
 |-----------------|-------------------|
@@ -1136,7 +1231,7 @@ Content-Type: application/json
 
 Use the following API and code examples to delete a service.
 
-*Table 9. Parameter*
+*Table 10. Parameter*
 
 | **Name** | **Description** |
 |-----------------|-------------------|

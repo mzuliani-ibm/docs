@@ -17,7 +17,7 @@ copyright:
 {:pre: .pre}
 
 # Introduzione a {{site.data.keyword.openwhisk_short}}
-*Ultimo aggiornamento: 17 febbraio 2016* 
+*Ultimo aggiornamento: 17 febbraio 2016*
 
 {{site.data.keyword.openwhisk}} è un servizio di calcolo distribuito guidato dagli eventi. {{site.data.keyword.openwhisk_short}} esegue la logica dell'applicazione in risposta a eventi o chiamate dirette provenienti da applicazioni Web o mobile su HTTP. Gli eventi possono essere forniti da servizi Bluemix quali Cloudant e da fonti esterne. Gli sviluppatori possono concentrarsi sulla scrittura della logica dell'applicazione e sulla creazione di azioni eseguite su richiesta. Il tasso di esecuzione delle azioni corrisponde sempre al tasso degli eventi, con conseguenti utilizzo ottimale e resilienza e ridimensionamento intrinsechi. Paghi solo per ciò che usi e non devi gestire alcun server. Puoi anche ottenere il [codice sorgente](https://github.com/openwhisk/openwhisk) ed eseguire il sistema autonomamente.
 {: shortdesc}
@@ -42,7 +42,7 @@ Una volta configurato il tuo ambiente, puoi iniziare a utilizzare la CLI {{site.
 Puoi utilizzare {{site.data.keyword.openwhisk_short}} dalla tua applicazione mobile iOS o Apple Watch, attraverso l'SDK iOS {{site.data.keyword.openwhisk_short}}. Per maggiori dettagli, fai riferimento alla documentazione di [iOS](./openwhisk_mobile_sdk.html).
 
 ## Utilizzo delle API REST con {{site.data.keyword.openwhisk_short}}
-Una volta abilitato il tuo ambiente {{site.data.keyword.openwhisk_short}}, puoi utilizzare {{site.data.keyword.openwhisk_short}} con le tue applicazioni Web o mobile con chiamate API REST. Per ulteriori dettagli sull'utilizzo delle API per azioni, attivazioni, pacchetti, regole e trigger, vedi la [{{site.data.keyword.openwhisk_short}} documentazione API](https://new-console.{DomainName}/apidocs/98).
+Una volta abilitato il tuo ambiente {{site.data.keyword.openwhisk_short}}, puoi utilizzare {{site.data.keyword.openwhisk_short}} con le tue applicazioni Web o mobile con chiamate API REST. Per ulteriori dettagli sull'utilizzo delle API per azioni, attivazioni, pacchetti, regole e trigger, vedi la [{{site.data.keyword.openwhisk_short}} API documentation](https://new-console.{DomainName}/apidocs/98).
 
 ## {{site.data.keyword.openwhisk_short}}Esempio Hello World
 Per iniziare a utilizzare {{site.data.keyword.openwhisk_short}}, prova il seguente esempio di codice JavaScript.
@@ -66,14 +66,14 @@ Per utilizzare questo esempio, completa la seguente procedura:
 
     ```
     wsk action create hello hello.js
-    ```
+```
     {: pre}
 
 3. Quindi, richiama l'azione immettendo i seguenti comandi.
 
     ```
     wsk action invoke hello --blocking --result
-    ```
+```
     {: pre}  
 
     Questo comando ha il seguente output:
@@ -82,12 +82,12 @@ Per utilizzare questo esempio, completa la seguente procedura:
     {
         "payload": "Hello, World!"
     }
-    ```
+```
     {: screen}
 
     ```
     wsk action invoke hello --blocking --result --param name Fred
-    ```
+```
     {: pre}  
 
     Questo comando ha il seguente output:
@@ -96,7 +96,7 @@ Per utilizzare questo esempio, completa la seguente procedura:
     {
         "payload": "Hello, Fred!"
     }
-    ```
+```
     {: screen}
 
 Puoi anche utilizzare le funzionalità guidate dagli eventi in {{site.data.keyword.openwhisk_short}} per richiamare questa azione in risposta agli eventi. Segui l'[esempio di servizio di allerta](./openwhisk_packages.html#openwhisk_packages_trigger) per configurare un'origine eventi che richiami l'azione `hello` ogni volta che viene generato un evento periodico.

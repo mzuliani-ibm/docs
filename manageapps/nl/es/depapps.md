@@ -14,7 +14,7 @@ copyright:
 #Despliegue de apps
 {: #deployingapps}
 
-*Última actualización: 17 de marzo de 2016*
+*Última actualización: 9 de mayo de 2016*
 
 Puede desplegar apps en {{site.data.keyword.Bluemix}} utilizando varios métodos, como por ejemplo la interfaz de línea de mandatos y los entornos de desarrollo integrado (IDE). También puede utilizar manifiestos de app para desplegar apps. Si utiliza un manifiesto de app debe reducir el número de detalles de despliegue que debe especificar cada vez que despliega una app en {{site.data.keyword.Bluemix_notm}}.
 {:shortdesc}
@@ -26,7 +26,7 @@ El despliegue de una app en {{site.data.keyword.Bluemix_notm}} incluye dos fases
 
 ###Transferencia de una app
 
-Durante la fase de transferencia, un agente de ejecución de gotas (DEA) utiliza la información que especifica el usuario en la interfaz de la línea de mandatos cf o en el archivo `manifest.yml` para decidir qué se debe crear para la fase de transferencia. El DEA selecciona un paquete de compilación adecuado para transferir la app y el resultado del proceso de transferencia es una gota. Para obtener más información sobre cómo desplegar una app en {{site.data.keyword.Bluemix_notm}}, consulte Arquitectura de [{{site.data.keyword.Bluemix_notm}}, Cómo funciona {{site.data.keyword.Bluemix_notm}}](../public/index.html#publicarch). 
+Durante la fase de transferencia, un agente de ejecución de gotas (DEA) utiliza la información que especifica el usuario en la interfaz de la línea de mandatos cf o en el archivo `manifest.yml` para decidir qué se debe crear para la fase de transferencia. El DEA selecciona un paquete de compilación adecuado para transferir la app y el resultado del proceso de transferencia es una gota. Para obtener más información sobre cómo desplegar una app en {{site.data.keyword.Bluemix_notm}}, consulte Arquitectura de [{{site.data.keyword.Bluemix_notm}}, Cómo funciona {{site.data.keyword.Bluemix_notm}}](../public/index.html#publicarch).
 
 Durante el proceso de transferencia, el DEA comprueba si el paquete de compilación coincide con la app. Por ejemplo, un tiempo de ejecución de Liberty para un archivo .war o un tiempo de ejecución Node.js para archivos .js. El DEA crea a continuación un contenedor aislado que contiene el paquete de compilación y el código de app. El componente
 Warden es el encargado de gestionar el contenedor. Para obtener más información, consulte [Cómo se transfieren las apps](http://docs.cloudfoundry.org/concepts/how-applications-are-staged.html){:new_window}.
@@ -51,13 +51,13 @@ Cuando despliegue sus apps en {{site.data.keyword.Bluemix_notm}} desde la interf
 
 Si utiliza un paquete de compilación externo, debe especificar el URL del paquete de compilación mediante la opción **-b** cuando despliegue la app en {{site.data.keyword.Bluemix_notm}} desde el indicador de mandatos.
 
-  * Para desplegar paquetes del servidor Liberty en {{site.data.keyword.Bluemix_notm}}, utilice el mandato siguiente, desde su directorio de origen: 
+  * Para desplegar paquetes del servidor Liberty en {{site.data.keyword.Bluemix_notm}}, utilice el mandato siguiente, desde su directorio de origen:
   
   ```
   cf push
   ```
   
-  Para obtener más información sobre el paquete de compilación de Liberty, consulte el apartado [Liberty para Java](../starters/liberty/index.html#liberty).
+  Para obtener más información sobre el paquete de compilación de Liberty, consulte el apartado [Liberty para Java](../runtimes/liberty/index.html).
   
   * Para desplegar apps Java Tomcat en {{site.data.keyword.Bluemix_notm}}, utilice el mandato siguiente:
   
@@ -127,7 +127,7 @@ Una app es específica del espacio en el que se ha desplegado. No puede mover ni
   cf target -s <nombre_espacio>
   ```
   
-  2. Acceda al directorio de la app y despliéguela con el mandato **cf push**, donde nombre_app debe ser exclusivo dentro del dominio. 
+  2. Acceda al directorio de la app y despliéguela con el mandato **cf push**, donde nombre_app debe ser exclusivo dentro del dominio.
   
   ```
   cf push nombre_app
@@ -249,7 +249,7 @@ mediante el mandato **cf env** o desde la interfaz de usuario {{site.data.keywor
   }
   ```
         
-También tiene acceso a las variables de entorno establecidas por DEA y los paquetes de compilación. 
+También tiene acceso a las variables de entorno establecidas por DEA y los paquetes de compilación.
 
 Las siguientes variables están definidas por el DEA:
 
@@ -351,8 +351,8 @@ Las variables definidas por un paquete de compilación varían según cada paque
 	  <dd>La ubicación de las salidas que se generen como archivos de registro y directorios de trabajo de una instancia de servidor de un perfil de Liberty en ejecución.</dd>
 	  </dl>
 </li>   
-<li>Las variables siguientes están definidas por el paquete de compilación de Node.js: 	
-	  <dl>
+<li>Las variables siguientes están definidas por el paquete de compilación de Node.js:
+	<dl>
 	<dt><strong>BUILD_DIR</strong></dt>
 	<dd>El directorio del entorno de ejecución de Node.js.</dd>
 	<dt><strong>CACHE_DIR</strong></dt>
@@ -364,7 +364,7 @@ Las variables definidas por un paquete de compilación varían según cada paque
 </li>
 </ul>	
 
-Puede utilizar el código de ejemplo siguiente de Node.js para obtener el valor de la variable de entorno VCAP_SERVICES: 
+Puede utilizar el código de ejemplo siguiente de Node.js para obtener el valor de la variable de entorno VCAP_SERVICES:
 
 ```
 if (process.env.VCAP_SERVICES) {
@@ -424,7 +424,7 @@ Las variables de entorno definidas por el usuario son específicas para una apli
     ```
 	
 Tras añadir una variable de entorno definida por el usuario, puede usar el código de ejemplo Node.js siguiente para obtener el
-valor de la variable que ha definido: 
+valor de la variable que ha definido:
 
 ```
 var myEnv = process.env.env_var_name;
@@ -452,8 +452,12 @@ El archivo `.cfignore` contiene los nombres de los archivos y directorios que de
 tmp/
 ```
 
-# rellinks
-## general 
+# Enlaces relacionados
+{: #rellinks}
+
+## Enlaces relacionados
+{: #general}
+
 * [Despliegue con manifiestos de app](http://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html){:new_window}
 * [CF Manifest Generator](http://cfmanigen.mybluemix.net/){:new_window}
 * [Iniciación a cf v6](http://docs.cloudfoundry.org/devguide/installcf/whats-new-v6.html){:new_window}
